@@ -1,0 +1,60 @@
+/* FONT */
+
+@font-face {
+    font-family: 'metropolis';
+    src: url('../content/fonts/Metropolis-Regular.woff');
+    font-display: swap;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'metropolis';
+    src: url('../content/fonts/Metropolis-Bold.woff');
+    font-display: swap;
+    font-weight: bold;
+}
+
+:root {
+    font-family: 'metropolis', Arial, Helvetica, sans-serif;
+    font-size: clamp(17px, 3vw, 20px);
+    line-height: clamp(22px, 2.8vw, 26px);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: bold;
+}
+
+h1 {
+    font-size: clamp(2.1rem, 5vw, 3.5rem);
+    line-height: clamp(2.6rem, 5vw, 3.9rem);
+}
+
+h2 {
+    font-size: clamp(1.75rem, 4.7vw, 2.5rem);
+    line-height: clamp(2.1rem, 4.7vw, 2.75rem);
+}
+
+h3 {
+    font-size: clamp(1.65rem, 4.5vw, 2.1rem);
+    line-height: clamp(2rem, 4.5vw, 2.35rem);
+}
+
+h4 {
+    font-size: clamp(1.5rem, 4.3vw, 1.75rem);
+    line-height: clamp(1.9rem, 4.3vw, 2rem);
+}
+
+h5 {
+    font-size: clamp(1.4rem, 4vw, 1.4rem);
+    line-height: clamp(1.75rem, 4vw, 1.65rem);
+}
+
+h6 {
+    font-size: clamp(1.15rem, 3.7vw, 1.15rem);
+    line-height: clamp(1.45rem, 3.7vw, 1.35rem);
+}
