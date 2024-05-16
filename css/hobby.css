@@ -1,0 +1,128 @@
+section.hobbySection img,
+section.hobbySection article,
+section.hobbySection .hobbyRows {
+  width: 100%;
+  position: relative;
+}
+
+section.hobbySection .hobbyText {
+  margin-top: 1rem;
+}
+
+section.hobbySection .hobbyText h5 {
+  margin-bottom: 1rem;
+}
+
+section.hobbySection picture::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23F1ECDCFF' stroke-width='4' stroke-dasharray='2%2c 10' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+}
+
+section.hobbySection .hobbyRows {
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+
+section.hobbySection .hobbyRows article {
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap;
+  width: 33.3333333333%;
+  padding: 0 60px 60px 60px;
+  margin: 60px 0;
+}
+
+/*** ::after -> horizontal line under the <article> element ***/
+section.hobbySection .hobbyRows article::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  display: block;
+  z-index: 2;
+  position: absolute;
+  bottom: -60px;
+  left: 0;
+  background-image: url("data:image/svg+xml,<svg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'><line%20 x1='0' y1='0' x2='100%' y2='0' fill='none' stroke='%23F1ECDCFF' stroke-width='4' stroke-dasharray='2%2c 10' stroke-dashoffset='0' stroke-linecap='square'/></svg>");
+}
+
+section.hobbySection .hobbyRows article::before {
+  position: absolute;
+  display: block;
+  width: 2px;
+  height: 100%;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background-image: url("data:image/svg+xml,<svg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'><line%20 x1='0' y1='0' x2='0' y2='100%' fill='none' stroke='%23F1ECDCFF' stroke-width='4' stroke-dasharray='2%2c 10' stroke-dashoffset='0' stroke-linecap='square'/></svg>");
+}
+
+@media only screen and (min-width: 1025px) {
+  section.hobbySection .hobbyRows article:nth-child(-n+3) {
+    margin-top: 0;
+  }
+  /*** ::before -> vertical line between the <article> elements ***/
+  section.hobbySection .hobbyRows article:nth-child(3n+3)::before,
+  section.hobbySection .hobbyRows article:nth-child(3n+1)::before {
+    content: "";
+  }
+  section.hobbySection .hobbyRows article:nth-child(3n+1)::before {
+    left: unset;
+    right: 0;
+  }
+  /*** remove border from the last few elements ***/
+  section.hobbySection .hobbyRows article:nth-last-child(-n+2)::after {
+    content: unset;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  section.hobbySection .hobbyRows article::after {
+    bottom: -45px;
+  }
+  section.hobbySection .hobbyRows article {
+    padding: 0 30px 30px 30px;
+    margin: 45px 0;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  section.hobbySection .hobbyRows article {
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 1024px) and (min-width: 651px) {
+  section.hobbySection .hobbyRows article:nth-child(-n+2) {
+    margin-top: 0;
+  }
+  /*** ::before -> vertical line between the <article> elements ***/
+  section.hobbySection .hobbyRows article:nth-child(2n+2)::before {
+    content: "";
+  }
+  /*** remove border from the last few elements ***/
+  section.hobbySection .hobbyRows article:last-child::after {
+    content: unset;
+  }
+}
+@media only screen and (max-width: 650px) {
+  section.hobbySection .hobbyRows article {
+    width: 100%;
+    padding: 0;
+    margin: 60px 0;
+  }
+  section.hobbySection .hobbyRows article::after {
+    bottom: -60px;
+  }
+  section.hobbySection .hobbyRows article > div {
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+  }
+}/*# sourceMappingURL=hobby.css.map */

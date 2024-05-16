@@ -1,0 +1,11 @@
+/* VARIABLES */
+:root {
+  --bgColorDark: #6E96A5;
+  --bgColorLight: #93BEDA;
+  --bgColorGrey: #647275;
+  --textColorDark: #393939;
+  --textColorLight: #F1ECDC;
+  --highlightColorOrange: #E66446;
+  --highlightColorRed: #A25050;
+  --borderLight: solid 3px var(--textColorLight);
+}/*# sourceMappingURL=variables.css.map */
