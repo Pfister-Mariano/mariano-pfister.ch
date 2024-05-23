@@ -1,0 +1,150 @@
+@use '../variables' as v;
+
+section#hero .heroContent,
+#hero.fullScreen {
+    min-height: 100vh;
+    height: max-content;
+}
+
+#hero {
+    padding: unset;
+    height: 100%;
+}
+
+@media (orientation: portrait) and (max-width: 1280px) {
+    #hero.fullScreen {
+        height: -webkit-max-content;
+        height: -moz-max-content;
+        height: max-content;
+    }
+}
+
+section {
+    height: 100%;
+
+    &#hero {
+        >.wrapper {
+            display: -webkit-box;
+            display: flex;
+            height: 100%;
+            align-items: flex-end;
+            justify-content: space-between;
+        }
+
+        .heroContent {
+            display: -webkit-box;
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            margin: auto;
+            width: 100%;
+            max-width: 1300px;
+            padding-top: 230px;
+
+            @include v.responsive(768px) {
+                padding-top: 100px;
+                flex-direction: column;
+                gap: 3rem;
+            }
+
+            >div {
+                display: -webkit-box;
+                display: flex;
+                align-items: flex-end;
+                width: 50%;
+
+                @include v.responsive(768px) {
+                    width: 100%;
+                }
+            }
+        }
+
+
+        .heroImage {
+            display: -webkit-box;
+            display: flex;
+            align-items: flex-end;
+
+            @include v.responsive(768px) {
+                justify-content: flex-end;
+            }
+
+            img {
+                height: unset;
+                max-height: 100%;
+                -o-object-fit: contain;
+                object-fit: contain;
+                max-width: 100%;
+                width: 550px;
+
+                @include v.responsive(768px) {
+                    width: 70%;
+                    max-width: 330px;
+                    margin-left: auto;
+                }
+            }
+        }
+
+        .heroText {
+            height: 100%;
+            padding-bottom: 8rem;
+
+            h1 {
+                margin-top: 8.5rem;
+
+                @include v.responsive(768px) {
+                    margin-top: 2.1em;
+                }
+            }
+
+            h3 {
+                margin: 3rem 0 1.5rem 0;
+            }
+
+            p {
+                margin: 1rem 0;
+            }
+
+            @include v.responsive(768px) {
+                padding-bottom: 0;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1280px) {
+    section#hero .heroContent {
+        padding-top: 150px;
+    }
+
+    header.fullScreen {
+        height: -webkit-max-content;
+        height: -moz-max-content;
+        height: max-content;
+    }
+
+    section#hero .heroText {
+        padding-bottom: 4rem;
+    }
+
+    section#hero .heroImage img {
+        width: 450px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    section#hero .heroImage {
+        justify-content: flex-end;
+    }
+
+    section#hero .heroImage img {
+        width: 70%;
+        max-width: 330px;
+        margin-left: auto;
+    }
+
+    section#hero .heroText h1 {
+        margin-top: 2.1em;
+    }
+
+}

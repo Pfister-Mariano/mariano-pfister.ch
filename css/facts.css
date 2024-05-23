@@ -1,7 +1,21 @@
+/* VARIABLES */
+/* :root {
+    --bgColorDark: #6E96A5;
+    --bgColorLight: #93BEDA;
+    --bgColorGrey: #647275;
+
+    --textColorDark: #393939;
+    --textColorLight: #F1ECDC;
+
+    --highlightColorOrange: #E66446;
+    --highlightColorRed: #A25050;
+
+    --borderLight: solid 3px #F1ECDC;
+}
+ */
 .factsTeaser .wrapper {
   width: 1000px;
 }
-
 .factsTeaser article {
   position: relative;
   display: grid;
@@ -9,7 +23,13 @@
   gap: 30px;
   width: 100%;
 }
-
+@media only screen and (max-width: 768px) {
+  .factsTeaser article {
+    grid-template-columns: 1fr;
+    max-width: 375px;
+    margin: auto;
+  }
+}
 .factsTeaser article .factsText {
   display: -webkit-box;
   display: flex;
@@ -18,7 +38,6 @@
   flex-direction: column;
   gap: 1.5rem;
 }
-
 .factsTeaser article .factsText > span {
   position: relative;
   display: block;
@@ -31,14 +50,23 @@
   margin-left: auto;
   padding: 1.5rem;
 }
-
+@media only screen and (max-width: 768px) {
+  .factsTeaser article .factsText > span {
+    padding: 10px;
+    max-width: unset;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .factsTeaser article .factsImg {
+    order: -1;
+  }
+}
 .factsTeaser article .factsImg img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
 }
-
 .factsTeaser article .factsText > span::before,
 .factsTeaser article .factsImg::before {
   content: "";
@@ -51,20 +79,4 @@
   left: 0;
   /* https://kovart.github.io/dashed-border-generator/ */
   background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23F1ECDCFF' stroke-width='4' stroke-dasharray='2%2c 10' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
-}
-
-@media only screen and (max-width: 768px) {
-  .factsTeaser article {
-    grid-template-columns: 1fr;
-    max-width: 375px;
-    margin: auto;
-  }
-  .factsTeaser article .factsImg {
-    -webkit-box-ordinal-group: 0;
-    order: -1;
-  }
-  .factsTeaser article .factsText > span {
-    padding: 10px;
-    max-width: unset;
-  }
 }/*# sourceMappingURL=facts.css.map */

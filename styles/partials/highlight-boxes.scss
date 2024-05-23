@@ -1,0 +1,57 @@
+@use '../variables' as v;
+
+section.highlightBoxes {
+    h2 {
+        text-align: center;
+        margin-bottom: 2.5rem;
+    }
+
+    p {
+        margin: 1rem 0;
+    }
+
+    .highlightBoxGrid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+
+        @include v.responsive(1024px) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        .box {
+            background-color: v.$highlightColorRed;
+            color: v.$textColorLight;
+            padding: 30px;
+            height: -webkit-max-content;
+            height: -moz-max-content;
+            height: max-content;
+
+            @include v.responsive(1024px) {
+                padding: 30px 15px;
+            }
+        }
+
+        h4 {
+            margin-bottom: 1.5rem;
+
+            @include v.responsive(1024px) {
+                margin-bottom: 1rem;
+            }
+        }
+
+        a.button {
+            background-color: v.$highlightColorOrange;
+            margin-top: 1.5rem;
+
+            &:hover {
+                background-color: v.$textColorLight;
+                color: v.$textColorDark;
+
+                &::before {
+                    background-color: v.$textColorDark;
+                }
+            }
+        }
+    }
+}

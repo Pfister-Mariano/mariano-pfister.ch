@@ -1,0 +1,103 @@
+@use '../variables' as v;
+
+main>section.textIntro:first-child {
+    padding-top: 350px;
+
+    @include v.responsive(1400px) {
+        padding-top: 230px;
+    }
+
+    @include v.responsive(768px) {
+        padding: 130px 0 100px 0;
+    }
+}
+
+section.textIntro .wrapper {
+    .wrapper {
+        width: 1000px;
+    }
+
+    h1 {
+        margin-bottom: 2rem;
+    }
+
+    p {
+        margin: 1rem 0;
+    }
+
+    .introButtons {
+        margin-top: 2rem;
+        display: -webkit-box;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+}
+
+/*** intro buttons on side ***/
+section.textIntro.introSideButtons {
+    .wrapper {
+        width: 1200px;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 1.5rem;
+
+        @include v.responsive(1280px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    h1 {
+        grid-column: 2;
+        margin: 0;
+
+        @include v.responsive(1280px) {
+            grid-column: 1;
+            grid-row: 1;
+        }
+    }
+
+    h3 {
+        margin-top: 3rem;
+        margin-bottom: 1.5rem;
+    }
+
+    ul {
+        padding-left: 1rem;
+    }
+
+    .introButtons {
+        grid-column: 1;
+        grid-row: 2;
+
+        display: -webkit-box;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        margin-top: 0;
+
+        @include v.responsive(1280px) {
+            grid-column: 1;
+            grid-row: 3;
+            align-items: flex-start;
+        }
+    }
+
+    >p {
+        @include v.responsive(1280px) {
+            grid-column: 1;
+            grid-row: 2;
+        }
+    }
+
+    p:first-of-type {
+        margin-top: 0;
+        grid-row: 2;
+    }
+
+    span {
+        grid-column: 1 / span 2;
+        grid-row: auto;
+    }
+}

@@ -1,0 +1,110 @@
+@use 'variables' as v;
+
+/**** ability****/
+
+section.abilityList {
+    text-align: center;
+
+    a.button {
+        margin: auto;
+    }
+
+    .wrapper>a.button {
+        margin-top: 30px;
+    }
+
+    h2 {
+        color: v.$highlightColorRed;
+        max-width: 500px;
+        margin: 0 auto 3rem auto;
+    }
+
+    .abilityWrapper {
+        width: 100%;
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-pack: center;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        @include v.responsive(1280px) {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        @include v.responsive(768px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @include v.responsive(500px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        article {
+            width: calc(100% / 6);
+            min-width: 150px;
+            padding: 0 15px;
+            margin-bottom: 30px;
+
+            &:nth-last-child(1) {
+                @include v.responsive(1280px) {
+                    grid-column: 3;
+                }
+
+                @include v.responsive(768px) {
+                    grid-column: unset;
+                }
+            }
+
+            &:nth-last-child(2) {
+                @include v.responsive(1280px) {
+                    grid-column: 2;
+                }
+
+                @include v.responsive(768px) {
+                    grid-column: unset;
+                }
+            }
+        }
+
+        img {
+            margin: auto;
+            width: 100%;
+            height: 100%;
+            -o-object-fit: contain;
+            object-fit: contain;
+        }
+
+        h6 {
+            display: block;
+            margin-top: 1.5rem;
+            font-weight: bold;
+        }
+
+    }
+
+    .abilityOuterStroke {
+        /* https://kovart.github.io/dashed-border-generator/ */
+        background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='22' ry='22' stroke='%23A25050FF' stroke-width='4' stroke-dasharray='2%2c 10' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+        border-radius: 22px;
+        padding: 5px;
+        max-width: 200px;
+        margin: auto;
+    }
+
+    .abilityInnerStroke {
+        background: rgba(60, 70, 70, 0.3);
+        border-radius: 22px;
+        border: 2px solid v.$highlightColorRed;
+        padding: 30px;
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        align-items: center;
+
+        @include v.responsive(1280px) {
+            padding: 10px;
+        }
+    }
+}

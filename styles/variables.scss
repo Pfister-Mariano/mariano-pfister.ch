@@ -1,18 +1,4 @@
 /* VARIABLES */
-:root {
-    --bgColorDark: #6E96A5;
-    --bgColorLight: #93BEDA;
-    --bgColorGrey: #647275;
-
-    --textColorDark: #393939;
-    --textColorLight: #F1ECDC;
-
-    --highlightColorOrange: #E66446;
-    --highlightColorRed: #A25050;
-
-    --borderLight: solid 3px var(--textColorLight);
-}
-
 $bgColorDark: #6E96A5;
 $bgColorLight: #93BEDA;
 $bgColorGrey: #647275;
@@ -23,7 +9,7 @@ $textColorLight: #F1ECDC;
 $highlightColorOrange: #E66446;
 $highlightColorRed: #A25050;
 
-$borderLight: solid 3px var($textColorLight);
+$borderLight: solid 3px #F1ECDC;
 
 @mixin responsive($width, $query: max-width) {
     @media only screen and ($query : $width) {

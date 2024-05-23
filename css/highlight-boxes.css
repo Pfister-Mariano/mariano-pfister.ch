@@ -1,53 +1,64 @@
+/* VARIABLES */
+/* :root {
+    --bgColorDark: #6E96A5;
+    --bgColorLight: #93BEDA;
+    --bgColorGrey: #647275;
+
+    --textColorDark: #393939;
+    --textColorLight: #F1ECDC;
+
+    --highlightColorOrange: #E66446;
+    --highlightColorRed: #A25050;
+
+    --borderLight: solid 3px #F1ECDC;
+}
+ */
 section.highlightBoxes h2 {
   text-align: center;
   margin-bottom: 2.5rem;
 }
-
 section.highlightBoxes p {
   margin: 1rem 0;
 }
-
 section.highlightBoxes .highlightBoxGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
 }
-
+@media only screen and (max-width: 1024px) {
+  section.highlightBoxes .highlightBoxGrid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 section.highlightBoxes .highlightBoxGrid .box {
-  background-color: var(--highlightColorRed);
-  color: var(--textColorLight);
+  background-color: #A25050;
+  color: #F1ECDC;
   padding: 30px;
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
 }
-
-section.highlightBoxes .highlightBoxGrid h4 {
-  margin-bottom: 1.5rem;
-}
-
-section.highlightBoxes a.button {
-  background-color: var(--highlightColorOrange);
-  margin-top: 1.5rem;
-}
-
-section.highlightBoxes a.button:hover {
-  background-color: var(--textColorLight);
-  color: var(--textColorDark);
-}
-
-section.highlightBoxes a.button:hover::before {
-  background-color: var(--textColorDark);
-}
-
 @media only screen and (max-width: 1024px) {
-  section.highlightBoxes .highlightBoxGrid {
-    grid-template-columns: repeat(1, 1fr);
-  }
   section.highlightBoxes .highlightBoxGrid .box {
     padding: 30px 15px;
   }
+}
+section.highlightBoxes .highlightBoxGrid h4 {
+  margin-bottom: 1.5rem;
+}
+@media only screen and (max-width: 1024px) {
   section.highlightBoxes .highlightBoxGrid h4 {
     margin-bottom: 1rem;
   }
+}
+section.highlightBoxes .highlightBoxGrid a.button {
+  background-color: #E66446;
+  margin-top: 1.5rem;
+}
+section.highlightBoxes .highlightBoxGrid a.button:hover {
+  background-color: #F1ECDC;
+  color: #393939;
+}
+section.highlightBoxes .highlightBoxGrid a.button:hover::before {
+  background-color: #393939;
 }/*# sourceMappingURL=highlight-boxes.css.map */

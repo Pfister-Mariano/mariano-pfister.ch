@@ -1,8 +1,21 @@
+/* VARIABLES */
+/* :root {
+    --bgColorDark: #6E96A5;
+    --bgColorLight: #93BEDA;
+    --bgColorGrey: #647275;
+
+    --textColorDark: #393939;
+    --textColorLight: #F1ECDC;
+
+    --highlightColorOrange: #E66446;
+    --highlightColorRed: #A25050;
+
+    --borderLight: solid 3px #F1ECDC;
+}
+ */
 section#hero .heroContent,
 #hero.fullScreen {
   min-height: 100vh;
-  height: -webkit-max-content;
-  height: -moz-max-content;
   height: max-content;
 }
 
@@ -11,24 +24,26 @@ section#hero .heroContent,
   height: 100%;
 }
 
+@media (orientation: portrait) and (max-width: 1280px) {
+  #hero.fullScreen {
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+  }
+}
 section {
   height: 100%;
 }
-
 section#hero > .wrapper {
   display: -webkit-box;
   display: flex;
   height: 100%;
-  -webkit-box-align: end;
   align-items: flex-end;
-  -webkit-box-pack: justify;
   justify-content: space-between;
 }
-
 section#hero .heroContent {
   display: -webkit-box;
   display: flex;
-  -webkit-box-pack: justify;
   justify-content: space-between;
   gap: 30px;
   margin: auto;
@@ -36,32 +51,34 @@ section#hero .heroContent {
   max-width: 1300px;
   padding-top: 230px;
 }
-
+@media only screen and (max-width: 768px) {
+  section#hero .heroContent {
+    padding-top: 100px;
+    flex-direction: column;
+    gap: 3rem;
+  }
+}
 section#hero .heroContent > div {
   display: -webkit-box;
   display: flex;
-  -webkit-box-align: end;
   align-items: flex-end;
   width: 50%;
 }
-
-/* section#hero .heroText {
-    width: 50%;
-    height: 100%;
-    max-height: 900px;
-} */
+@media only screen and (max-width: 768px) {
+  section#hero .heroContent > div {
+    width: 100%;
+  }
+}
 section#hero .heroImage {
   display: -webkit-box;
   display: flex;
-  -webkit-box-align: end;
   align-items: flex-end;
 }
-
-section#hero .heroText {
-  height: 100%;
-  padding-bottom: 8rem;
+@media only screen and (max-width: 768px) {
+  section#hero .heroImage {
+    justify-content: flex-end;
+  }
 }
-
 section#hero .heroImage img {
   height: unset;
   max-height: 100%;
@@ -70,17 +87,35 @@ section#hero .heroImage img {
   max-width: 100%;
   width: 550px;
 }
-
+@media only screen and (max-width: 768px) {
+  section#hero .heroImage img {
+    width: 70%;
+    max-width: 330px;
+    margin-left: auto;
+  }
+}
+section#hero .heroText {
+  height: 100%;
+  padding-bottom: 8rem;
+}
 section#hero .heroText h1 {
   margin-top: 8.5rem;
 }
-
+@media only screen and (max-width: 768px) {
+  section#hero .heroText h1 {
+    margin-top: 2.1em;
+  }
+}
+section#hero .heroText h3 {
+  margin: 3rem 0 1.5rem 0;
+}
 section#hero .heroText p {
   margin: 1rem 0;
 }
-
-section#hero .heroText h3 {
-  margin: 3rem 0 1.5rem 0;
+@media only screen and (max-width: 768px) {
+  section#hero .heroText {
+    padding-bottom: 0;
+  }
 }
 
 @media only screen and (max-width: 1280px) {
@@ -99,31 +134,8 @@ section#hero .heroText h3 {
     width: 450px;
   }
 }
-@media (orientation: portrait) and (max-width: 1280px) {
-  #hero.fullScreen {
-    height: -webkit-max-content;
-    height: -moz-max-content;
-    height: max-content;
-  }
-}
 @media only screen and (max-width: 768px) {
-  section#hero .heroContent {
-    padding-top: 100px;
-  }
-  section#hero .heroText {
-    padding-bottom: 0;
-  }
-  section#hero .heroContent {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    flex-direction: column;
-    gap: 3rem;
-  }
-  section#hero .heroContent > div {
-    width: 100%;
-  }
   section#hero .heroImage {
-    -webkit-box-pack: end;
     justify-content: flex-end;
   }
   section#hero .heroImage img {

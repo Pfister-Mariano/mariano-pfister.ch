@@ -1,15 +1,18 @@
 /* VARIABLES */
-:root {
-  --bgColorDark: #6E96A5;
-  --bgColorLight: #93BEDA;
-  --bgColorGrey: #647275;
-  --textColorDark: #393939;
-  --textColorLight: #F1ECDC;
-  --highlightColorOrange: #E66446;
-  --highlightColorRed: #A25050;
-  --borderLight: solid 3px var(--textColorLight);
-}
+/* :root {
+    --bgColorDark: #6E96A5;
+    --bgColorLight: #93BEDA;
+    --bgColorGrey: #647275;
 
+    --textColorDark: #393939;
+    --textColorLight: #F1ECDC;
+
+    --highlightColorOrange: #E66446;
+    --highlightColorRed: #A25050;
+
+    --borderLight: solid 3px #F1ECDC;
+}
+ */
 /* CSS RESET */
 *, *::after,
 *::before {
@@ -34,11 +37,10 @@ a {
   all: unset;
   text-decoration: underline;
   cursor: pointer;
-  -webkit-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
 }
 a:hover {
-  color: var(--highlightColorOrange);
+  color: #E66446;
 }
 
 img,
@@ -50,18 +52,18 @@ picture {
 
 /* ESSENTIAL CLASSES */
 .backgroundDark {
-  background: var(--bgColorDark) url(../content/images/background-noise-20.png);
-  color: var(--textColorLight);
+  background: #6E96A5 url(../content/images/background-noise-20.png);
+  color: #F1ECDC;
 }
 
 .backgroundLight {
-  background: var(--bgColorLight) url(../content/images/background-noise-20.png);
-  color: var(--textColorDark);
+  background: #93BEDA url(../content/images/background-noise-20.png);
+  color: #393939;
 }
 
 .backgroundGrey {
-  background: var(--bgColorGrey) url(../content/images/background-noise-20.png);
-  color: var(--textColorLight);
+  background: #647275 url(../content/images/background-noise-20.png);
+  color: #F1ECDC;
 }
 
 .wrapper {
@@ -123,8 +125,8 @@ a.button {
   font-weight: bold;
   text-decoration: none;
   letter-spacing: 0.1em;
-  color: var(--textColorLight);
-  background-color: var(--highlightColorRed);
+  color: #F1ECDC;
+  background-color: #A25050;
   border-radius: 25px;
 }
 @media only screen and (max-width: 550px) {
@@ -140,7 +142,7 @@ a.button::before {
   height: 25px;
   width: 25px;
   mask-image: url(../content/icons/chevrons-right.svg);
-  background-color: var(--textColorLight);
+  background-color: #F1ECDC;
 }
 a.button.mailIcon::before {
   mask-image: url(../content/icons/envelope.svg);
@@ -153,7 +155,7 @@ a.button.externalLinkIcon::before {
   mask-image: url(../content/icons/arrow-up-right-from-square.svg);
 }
 a.button:hover {
-  background-color: var(--highlightColorOrange);
+  background-color: #E66446;
 }
 
 /* IMG Aspect Ratios */
@@ -250,8 +252,8 @@ footer .wrapper::before {
   top: 0;
   width: 100%;
   height: 100%;
-  border-top: var(--borderLight);
-  border-bottom: var(--borderLight);
+  border-top: solid 3px #F1ECDC;
+  border-bottom: solid 3px #F1ECDC;
 }
 footer .wrapper::after {
   content: "";
@@ -260,8 +262,8 @@ footer .wrapper::after {
   left: -20px;
   width: calc(100% + 40px);
   height: calc(100% - 40px);
-  border-left: var(--borderLight);
-  border-right: var(--borderLight);
+  border-left: solid 3px #F1ECDC;
+  border-right: solid 3px #F1ECDC;
 }
 @media only screen and (max-width: 650px) {
   footer .wrapper::after {
@@ -374,8 +376,8 @@ footer .footerLogo {
   width: 1575px;
   max-width: calc(100% - 80px);
   height: calc(100% - 140px);
-  border-left: var(--borderLight);
-  border-right: var(--borderLight);
+  border-left: solid 3px #F1ECDC;
+  border-right: solid 3px #F1ECDC;
 }
 
 .mobileFullscreenBlur {
@@ -386,7 +388,7 @@ nav {
   position: fixed;
   height: 120px;
   width: 100%;
-  color: var(--textColorLight);
+  color: #F1ECDC;
   z-index: 100;
   backdrop-filter: blur(10px);
 }
@@ -446,8 +448,8 @@ nav .wrapper {
   height: calc(100% - 40px);
   padding: 10px;
   margin: 20px auto;
-  border-right: var(--borderLight);
-  border-left: var(--borderLight);
+  border-right: solid 3px #F1ECDC;
+  border-left: solid 3px #F1ECDC;
   overflow: visible;
 }
 @media only screen and (max-width: 1400px) {
@@ -468,7 +470,7 @@ nav .wrapper::after, nav .wrapper::before {
   content: "";
   width: calc(50% - 40px - 80px);
   display: block;
-  border-bottom: var(--borderLight);
+  border-bottom: solid 3px #F1ECDC;
   position: absolute;
   bottom: -20px;
   left: 20px;
@@ -542,7 +544,7 @@ nav menu a {
   }
 }
 nav menu a.active, nav menu a:hover {
-  color: var(--highlightColorOrange);
+  color: #E66446;
 }
 @media only screen and (max-width: 768px) {
   nav menu.navMain {
