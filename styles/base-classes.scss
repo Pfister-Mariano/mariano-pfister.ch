@@ -516,6 +516,15 @@ nav {
             }
         }
 
+        .formModalTrigger{
+            height: 150px;
+            width: 150px;
+            background: red;
+            position: absolute;
+            top: 120px;
+            right: 10px;
+            border-radius: 50%;
+        }
     }
 
     menu {
@@ -665,6 +674,21 @@ nav {
         }
     }
 
+}
+
+.formModal{
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    background-color: green;
+    z-index: 110;
+    pointer-events: none;
+    opacity: 0;
+    transition: 0.2s ease-in-out;
+    &.active{
+        pointer-events: all;
+        opacity: 1;
+    }
 }
 
 body.mobileNavActive #mobileNavTrigger span {
