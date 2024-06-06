@@ -90,6 +90,47 @@ main > section {
     padding: 100px 0;
   }
 }
+main .formModalTrigger {
+  height: 150px;
+  width: 150px;
+  position: fixed;
+  top: 140px;
+  right: 70px;
+  border-radius: 22px;
+  z-index: 98;
+  pointer-events: all;
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .formModalTrigger::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='22' ry='22' stroke='%23F1EBDCFF' stroke-width='4' stroke-dasharray='4%2c 8' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+  border-radius: 22px;
+  transition: 0.2s ease;
+}
+main .formModalTrigger svg {
+  height: 65px;
+}
+main .formModalTrigger path {
+  transition: 0.2s ease;
+}
+main .formModalTrigger:hover svg, main .formModalTrigger:hover path, main .formModalTrigger:hover {
+  color: #E66446;
+  fill: #E66446 !important;
+  cursor: pointer;
+}
+main .formModalTrigger:hover::before {
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='22' ry='22' stroke='%23E66446FF' stroke-width='4' stroke-dasharray='4%2c 8' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+}
 
 /* Button Class */
 a.button {
@@ -357,7 +398,8 @@ footer .footerLogo {
     max-width: calc(100% - 30px);
   }
 }
-.borderStrokes div {
+.borderStrokes > div {
+  position: relative;
   margin: auto;
   width: 1575px;
   max-width: calc(100% - 80px);
@@ -488,15 +530,6 @@ nav .wrapper::after {
     width: calc(100% - 85px);
     right: -15px;
   }
-}
-nav .wrapper .formModalTrigger {
-  height: 150px;
-  width: 150px;
-  background: red;
-  position: absolute;
-  top: 120px;
-  right: 10px;
-  border-radius: 50%;
 }
 nav menu {
   display: flex;
@@ -636,15 +669,106 @@ nav #mobileNavTrigger span::after {
   position: fixed;
   height: 100vh;
   width: 100%;
-  background-color: green;
-  z-index: 110;
+  z-index: 99;
   pointer-events: none;
   opacity: 0;
   transition: 0.2s ease-in-out;
+  backdrop-filter: blur(10px);
 }
 .formModal.active {
   pointer-events: all;
   opacity: 1;
+}
+.formModal .wrapper {
+  overflow: visible;
+  width: 830px;
+  margin-top: 250px;
+}
+.formModal .formCross {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 60px;
+  background-color: #A25050;
+  color: #F1ECDC;
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  border-radius: 50%;
+  transition: 0.2s ease;
+}
+.formModal .formCross:hover {
+  background-color: #E66446;
+  cursor: pointer;
+}
+.formModal form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 26px;
+  color: #393939;
+}
+.formModal form textarea,
+.formModal form select,
+.formModal form option,
+.formModal form input {
+  all: unset;
+  box-sizing: border-box;
+}
+.formModal form span {
+  position: relative;
+  height: 100%;
+}
+.formModal form span::after {
+  content: "";
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='22' ry='22' stroke='%233C4646FF' stroke-width='6' stroke-dasharray='2%2c 12' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+  border-radius: 20px;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  opacity: 0;
+  transition: 0.2s ease-in-out;
+}
+.formModal form span:has(input:focus, textarea:focus)::after {
+  opacity: 1;
+}
+.formModal form span:has(textarea) {
+  grid-column: span 2;
+}
+.formModal form label {
+  position: absolute;
+  z-index: 3;
+  text-transform: uppercase;
+  line-height: 50px;
+  left: 20px;
+  opacity: 0.5;
+  pointer-events: none;
+}
+.formModal form option,
+.formModal form select {
+  line-height: 50px;
+}
+.formModal form option,
+.formModal form select,
+.formModal form textarea,
+.formModal form input {
+  height: 50px;
+  width: 100%;
+  background-color: #F1ECDC;
+  border-radius: 50px;
+  padding: 0 20px;
+}
+.formModal form textarea {
+  height: 100%;
+  min-height: 150px;
+  padding: 10px 20px;
+  border-radius: 25px;
 }
 
 body.mobileNavActive #mobileNavTrigger span {

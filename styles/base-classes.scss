@@ -1,729 +1,868 @@
-@use 'variables' as v;
+@use "variables" as v;
 
 /* CSS RESET */
 * {
-    margin: 0;
-    padding: 0;
-    border: none;
-    box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   border: none;
+   box-sizing: border-box;
 }
 
 *::after,
 *::before {
-    @extend *;
-    pointer-events: none;
+   @extend *;
+   pointer-events: none;
 }
 
 html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 10vh;
+   scroll-behavior: smooth;
+   scroll-padding-top: 10vh;
 }
 
 a {
-    all: unset;
-    text-decoration: underline;
-    cursor: pointer;
-    transition: .2s ease-out;
+   all: unset;
+   text-decoration: underline;
+   cursor: pointer;
+   transition: 0.2s ease-out;
 
-    &:hover {
-        color: v.$highlightColorOrange;
-    }
+   &:hover {
+      color: v.$highlightColorOrange;
+   }
 }
-
-
 
 img,
 picture {
-    display: block;
-    line-height: 0;
-    position: relative;
+   display: block;
+   line-height: 0;
+   position: relative;
 }
 
 /* ESSENTIAL CLASSES */
 
 .backgroundDark {
-    background: v.$bgColorDark url(../content/images/background-noise-20.png);
-    color: v.$textColorLight;
+   background: v.$bgColorDark url(../content/images/background-noise-20.png);
+   color: v.$textColorLight;
 }
 
 .backgroundLight {
-    background: v.$bgColorLight url(../content/images/background-noise-20.png);
-    color: v.$textColorDark;
+   background: v.$bgColorLight url(../content/images/background-noise-20.png);
+   color: v.$textColorDark;
 }
 
 .backgroundGrey {
-    background: v.$bgColorGrey url(../content/images/background-noise-20.png);
-    color: v.$textColorLight;
+   background: v.$bgColorGrey url(../content/images/background-noise-20.png);
+   color: v.$textColorLight;
 }
 
 .wrapper {
-    position: relative;
-    margin: 0 auto;
-    width: 1575px;
-    max-width: calc(100% - 80px);
-    overflow: hidden;
+   position: relative;
+   margin: 0 auto;
+   width: 1575px;
+   max-width: calc(100% - 80px);
+   overflow: hidden;
 
-    &.wrapperSmall {
-        width: 1300px;
-    }
+   &.wrapperSmall {
+      width: 1300px;
+   }
 }
 
-
-
 main {
-    .wrapper {
-        width: 1535px;
-        max-width: calc(100% - 120px);
+   .wrapper {
+      width: 1535px;
+      max-width: calc(100% - 120px);
 
-        @include v.responsive(650px) {
-            max-width: calc(100% - 30px);
-        }
-    }
+      @include v.responsive(650px) {
+         max-width: calc(100% - 30px);
+      }
+   }
 
-    >section {
-        padding: 180px 0;
+   > section {
+      padding: 180px 0;
 
-        @include v.responsive(1280px) {
-            padding: 150px 0;
-        }
+      @include v.responsive(1280px) {
+         padding: 150px 0;
+      }
 
-        @include v.responsive(768px) {
-            padding: 120px 0;
-        }
+      @include v.responsive(768px) {
+         padding: 120px 0;
+      }
 
-        @include v.responsive(500px) {
-            padding: 100px 0;
-        }
-    }
+      @include v.responsive(500px) {
+         padding: 100px 0;
+      }
+   }
+
+   .formModalTrigger {
+      height: 150px;
+      width: 150px;
+      position: fixed;
+      top: 140px;
+      right: 70px;
+      border-radius: 22px;
+      z-index: 98;
+      pointer-events: all;
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &::before {
+         content: "";
+         width: 100%;
+         height: 100%;
+         display: block;
+         z-index: 2;
+         position: absolute;
+         top: 0;
+         left: 0;
+         background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='22' ry='22' stroke='%23F1EBDCFF' stroke-width='4' stroke-dasharray='4%2c 8' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+         border-radius: 22px;
+         transition: 0.2s ease;
+      }
+
+      svg {
+         height: 65px;
+      }
+      path {
+         transition: 0.2s ease;
+      }
+      &:hover svg,
+      &:hover path,
+      &:hover {
+         color: v.$highlightColorOrange;
+         fill: v.$highlightColorOrange !important;
+         cursor: pointer;
+      }
+      &:hover::before {
+         background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='22' ry='22' stroke='%23E66446FF' stroke-width='4' stroke-dasharray='4%2c 8' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+      }
+   }
 }
 
 /* Button Class */
 
 a.button {
-    box-sizing: border-box;
-    position: relative;
-    display: -webkit-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+   box-sizing: border-box;
+   position: relative;
+   display: -webkit-box;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 
-    min-height: 50px;
-    min-width: 245px;
-    width: -webkit-max-content;
-    width: -moz-max-content;
-    width: max-content;
-    padding: 0 15px 0 45px;
+   min-height: 50px;
+   min-width: 245px;
+   width: -webkit-max-content;
+   width: -moz-max-content;
+   width: max-content;
+   padding: 0 15px 0 45px;
 
-    font-size: 0.9rem;
-    line-height: 1rem;
-    text-transform: uppercase;
-    font-weight: bold;
-    text-decoration: none;
-    letter-spacing: .1em;
-    color: v.$textColorLight;
+   font-size: 0.9rem;
+   line-height: 1rem;
+   text-transform: uppercase;
+   font-weight: bold;
+   text-decoration: none;
+   letter-spacing: 0.1em;
+   color: v.$textColorLight;
 
-    background-color: v.$highlightColorRed;
-    border-radius: 25px;
+   background-color: v.$highlightColorRed;
+   border-radius: 25px;
 
-    @include v.responsive(550px) {
-        min-width: unset;
-    }
+   @include v.responsive(550px) {
+      min-width: unset;
+   }
 
-    &::before {
-        content: '';
-        transition: .2s ease-in-out;
-        position: absolute;
-        left: 12px;
-        height: 25px;
-        width: 25px;
-        mask-image: url(../content/icons/chevrons-right.svg);
-        background-color: v.$textColorLight;
-    }
+   &::before {
+      content: "";
+      transition: 0.2s ease-in-out;
+      position: absolute;
+      left: 12px;
+      height: 25px;
+      width: 25px;
+      mask-image: url(../content/icons/chevrons-right.svg);
+      background-color: v.$textColorLight;
+   }
 
-    &.mailIcon::before {
-        mask-image: url(../content/icons/envelope.svg);
-    }
+   &.mailIcon::before {
+      mask-image: url(../content/icons/envelope.svg);
+   }
 
-    &.scrolldownIcon::before {
-        mask-image: url(../content/icons/arrow-down-from-line.svg);
-        width: 20px;
-    }
+   &.scrolldownIcon::before {
+      mask-image: url(../content/icons/arrow-down-from-line.svg);
+      width: 20px;
+   }
 
-    &.externalLinkIcon::before {
-        mask-image: url(../content/icons/arrow-up-right-from-square.svg);
-    }
+   &.externalLinkIcon::before {
+      mask-image: url(../content/icons/arrow-up-right-from-square.svg);
+   }
 
-    &:hover {
-        background-color: v.$highlightColorOrange;
-    }
+   &:hover {
+      background-color: v.$highlightColorOrange;
+   }
 }
-
 
 /* IMG Aspect Ratios */
 .imgRatio-4-3 {
-    display: -webkit-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    aspect-ratio: 4/3;
+   display: -webkit-box;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   overflow: hidden;
+   aspect-ratio: 4/3;
 }
 
 .imgRatio-3-4 {
-    display: -webkit-box;
-    display: flex;
-    -webkit-box-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    align-items: center;
-    overflow: hidden;
-    aspect-ratio: 3/4;
+   display: -webkit-box;
+   display: flex;
+   -webkit-box-pack: center;
+   justify-content: center;
+   -webkit-box-align: center;
+   align-items: center;
+   overflow: hidden;
+   aspect-ratio: 3/4;
 }
 
 .imgRatio-1-1 {
-    display: -webkit-box;
-    display: flex;
-    -webkit-box-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    align-items: center;
-    overflow: hidden;
-    aspect-ratio: 1/1;
+   display: -webkit-box;
+   display: flex;
+   -webkit-box-pack: center;
+   justify-content: center;
+   -webkit-box-align: center;
+   align-items: center;
+   overflow: hidden;
+   aspect-ratio: 1/1;
 }
 
 .imgRatio-4-3 img,
 .imgRatio-3-4 img,
 .imgRatio-1-1 img {
-    -o-object-fit: cover;
-    object-fit: cover;
+   -o-object-fit: cover;
+   object-fit: cover;
 }
 
 /* aspect-ratio fallback */
 @supports not (aspect-ratio: auto) {
+   picture.imgRatio-1-1,
+   picture.imgRatio-3-4,
+   picture.imgRatio-4-3 {
+      position: relative;
+      height: 0;
+   }
 
-    picture.imgRatio-1-1,
-    picture.imgRatio-3-4,
-    picture.imgRatio-4-3 {
-        position: relative;
-        height: 0;
-    }
+   picture.imgRatio-4-3 {
+      padding-top: calc(100% / (4 / 3));
+   }
 
-    picture.imgRatio-4-3 {
-        padding-top: calc(100% / (4/3));
-    }
+   picture.imgRatio-3-4 {
+      padding-top: calc(100% / (3 / 4));
+   }
 
-    picture.imgRatio-3-4 {
-        padding-top: calc(100% / (3/4));
-    }
+   picture.imgRatio-1-1 {
+      padding-top: calc(100% / (1 / 1));
+   }
 
-    picture.imgRatio-1-1 {
-        padding-top: calc(100% / (1/1));
-    }
-
-    picture.imgRatio-1-1 img,
-    picture.imgRatio-3-4 img,
-    picture.imgRatio-4-3 img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-    }
+   picture.imgRatio-1-1 img,
+   picture.imgRatio-3-4 img,
+   picture.imgRatio-4-3 img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+   }
 }
 
 /* Footer */
 
 footer {
-    padding-top: 160px;
+   padding-top: 160px;
 
-    section {
-        position: relative;
-        z-index: 95;
-        padding-top: 20px;
-        padding-bottom: 180px;
-    }
+   section {
+      position: relative;
+      z-index: 95;
+      padding-top: 20px;
+      padding-bottom: 180px;
+   }
 
-    .wrapper {
-        overflow: visible;
-        padding-top: 110px;
-        padding-bottom: 80px;
-        width: 1535px;
-        max-width: calc(100% - 120px);
+   .wrapper {
+      overflow: visible;
+      padding-top: 110px;
+      padding-bottom: 80px;
+      width: 1535px;
+      max-width: calc(100% - 120px);
 
-        @include v.responsive(650px) {
-            max-width: calc(100% - 30px);
-        }
+      @include v.responsive(650px) {
+         max-width: calc(100% - 30px);
+      }
 
-        &::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            width: 100%;
+      &::before {
+         content: "";
+         position: absolute;
+         top: 0;
+         width: 100%;
+         height: 100%;
+         border-top: v.$borderLight;
+         border-bottom: v.$borderLight;
+      }
+
+      &::after {
+         content: "";
+         position: absolute;
+         top: 20px;
+         left: -20px;
+         width: calc(100% + 40px);
+         height: calc(100% - 40px);
+         border-left: v.$borderLight;
+         border-right: v.$borderLight;
+
+         @include v.responsive(650px) {
+            display: none;
+         }
+      }
+   }
+
+   .footerContent {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+      @include v.responsive(768px) {
+         grid-template-columns: 1fr;
+      }
+
+      span {
+         max-width: 690px;
+         width: 100%;
+         flex-shrink: 0;
+
+         p:last-child {
+            margin-bottom: 0;
+         }
+      }
+
+      div {
+         min-width: 0;
+         height: 100%;
+         display: -webkit-box;
+         display: flex;
+         justify-content: flex-end;
+         align-items: center;
+         flex-wrap: wrap-reverse;
+         gap: 30px;
+
+         @include v.responsive(1500px) {
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+         }
+
+         @include v.responsive(768px) {
+            margin-top: 30px;
+            gap: 15px;
+            align-items: flex-end;
+         }
+      }
+
+      p,
+      h5 {
+         margin-bottom: 30px;
+      }
+
+      .button {
+         min-width: 200px;
+         height: max-content;
+
+         @include v.responsive(768px) {
+            min-width: unset;
+         }
+      }
+   }
+
+   .footerLogo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 0 20px;
+
+      @include v.responsive(1280px) {
+         height: 80px;
+      }
+
+      @include v.responsive(768px) {
+         height: 70px;
+      }
+
+      svg {
+         @include v.responsive(1280px) {
             height: 100%;
-            border-top: v.$borderLight;
-            border-bottom: v.$borderLight;
-        }
-
-        &::after {
-            content: '';
-            position: absolute;
-            top: 20px;
-            left: -20px;
-            width: calc(100% + 40px);
-            height: calc(100% - 40px);
-            border-left: v.$borderLight;
-            border-right: v.$borderLight;
-
-            @include v.responsive(650px) {
-                display: none;
-            }
-        }
-    }
-
-    .footerContent {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-
-        @include v.responsive(768px) {
-            grid-template-columns: 1fr;
-        }
-
-        span {
-            max-width: 690px;
-            width: 100%;
-            flex-shrink: 0;
-
-            p:last-child {
-                margin-bottom: 0;
-            }
-        }
-
-        div {
-            min-width: 0;
-            height: 100%;
-            display: -webkit-box;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            flex-wrap: wrap-reverse;
-            gap: 30px;
-
-            @include v.responsive(1500px) {
-                flex-direction: column;
-                align-items: flex-start;
-                justify-content: center;
-            }
-
-            @include v.responsive(768px) {
-                margin-top: 30px;
-                gap: 15px;
-                align-items: flex-end;
-            }
-        }
-
-        p,
-        h5 {
-            margin-bottom: 30px;
-        }
-
-        .button {
-            min-width: 200px;
-            height: max-content;
-
-            @include v.responsive(768px) {
-                min-width: unset;
-            }
-        }
-    }
-
-    .footerLogo {
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        padding: 0 20px;
-
-        @include v.responsive(1280px) {
-            height: 80px;
-        }
-
-        @include v.responsive(768px) {
-            height: 70px;
-        }
-
-        svg {
-            @include v.responsive(1280px) {
-                height: 100%;
-            }
-        }
-    }
+         }
+      }
+   }
 }
-
 
 /* NAVIGATION */
 
 .borderStrokes {
-    position: fixed;
-    top: 140px;
-    width: 100%;
-    height: 100%;
+   position: fixed;
+   top: 140px;
+   width: 100%;
+   height: 100%;
 
-    z-index: 90;
-    pointer-events: none;
+   z-index: 90;
+   pointer-events: none;
 
-    @include v.responsive(650px) {
-        display: none;
-    }
+   @include v.responsive(650px) {
+      display: none;
+   }
 
-    .wrapper {
-        @include v.responsive(1280px) {
-            max-width: calc(100% - 60px);
-        }
+   .wrapper {
+      @include v.responsive(1280px) {
+         max-width: calc(100% - 60px);
+      }
 
-        @include v.responsive(768px) {
-            max-width: calc(100% - 30px);
-        }
-    }
+      @include v.responsive(768px) {
+         max-width: calc(100% - 30px);
+      }
+   }
 
-    div {
-        margin: auto;
+   > div {
+      position: relative;
+      margin: auto;
 
-        width: 1575px;
-        max-width: calc(100% - 80px);
-        height: calc(100% - 140px);
+      width: 1575px;
+      max-width: calc(100% - 80px);
+      height: calc(100% - 140px);
 
-        border-left: v.$borderLight;
-        border-right: v.$borderLight;
-    }
+      border-left: v.$borderLight;
+      border-right: v.$borderLight;
+   }
 }
 
 .mobileFullscreenBlur {
-    display: none;
+   display: none;
 }
 
 nav {
-    position: fixed;
-    height: 120px;
+   position: fixed;
+   height: 120px;
 
-    width: 100%;
-    color: v.$textColorLight;
-    z-index: 100;
-    backdrop-filter: blur(10px);
+   width: 100%;
+   color: v.$textColorLight;
+   z-index: 100;
+   backdrop-filter: blur(10px);
 
-    @include v.responsive(1400px) {
-        height: 90px;
-    }
+   @include v.responsive(1400px) {
+      height: 90px;
+   }
 
-    @include v.responsive(768px) {
-        height: 75px;
-    }
+   @include v.responsive(768px) {
+      height: 75px;
+   }
 
-    @include v.responsive(500px) {
-        height: 60px;
-    }
+   @include v.responsive(500px) {
+      height: 60px;
+   }
 
-    .navLogo {
-        height: 100px;
-        position: absolute;
-        bottom: -20px;
-        left: 50%;
-        transform: translate(-50%, 50%);
-        z-index: 10;
+   .navLogo {
+      height: 100px;
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translate(-50%, 50%);
+      z-index: 10;
 
-        @include v.responsive(1400px) {
-            height: 80px;
-            position: absolute;
-            bottom: unset;
-            top: 15px;
-            left: 0;
-            transform: unset;
-        }
+      @include v.responsive(1400px) {
+         height: 80px;
+         position: absolute;
+         bottom: unset;
+         top: 15px;
+         left: 0;
+         transform: unset;
+      }
 
-        @include v.responsive(768px) {
-            height: 70px;
-            top: 10px;
-        }
+      @include v.responsive(768px) {
+         height: 70px;
+         top: 10px;
+      }
 
-        @include v.responsive(500px) {
-            height: 55px;
-            top: 5px;
-        }
+      @include v.responsive(500px) {
+         height: 55px;
+         top: 5px;
+      }
 
-        svg {
-            height: 100%;
-            width: 100%;
-        }
-    }
+      svg {
+         height: 100%;
+         width: 100%;
+      }
+   }
 
-    .wrapper {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: calc(100% - 40px);
-        padding: 10px;
-        margin: 20px auto;
-        border-right: v.$borderLight;
-        border-left: v.$borderLight;
-        overflow: visible;
+   .wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: calc(100% - 40px);
+      padding: 10px;
+      margin: 20px auto;
+      border-right: v.$borderLight;
+      border-left: v.$borderLight;
+      overflow: visible;
 
-        @include v.responsive(1400px) {
-            justify-content: flex-end;
-            height: calc(100% - 20px);
-            border: unset;
-            padding: 0;
-            margin: 10px auto;
-        }
+      @include v.responsive(1400px) {
+         justify-content: flex-end;
+         height: calc(100% - 20px);
+         border: unset;
+         padding: 0;
+         margin: 10px auto;
+      }
 
-        @include v.responsive(650px) {
-            max-width: calc(100% - 30px);
-        }
+      @include v.responsive(650px) {
+         max-width: calc(100% - 30px);
+      }
 
-        &::after,
-        &::before {
-            content: '';
-            width: calc(50% - 40px - 80px);
-            display: block;
-            border-bottom: v.$borderLight;
-            position: absolute;
-            bottom: -20px;
-            left: 20px;
-        }
+      &::after,
+      &::before {
+         content: "";
+         width: calc(50% - 40px - 80px);
+         display: block;
+         border-bottom: v.$borderLight;
+         position: absolute;
+         bottom: -20px;
+         left: 20px;
+      }
 
-        &::after {
-            right: 20px;
-            left: unset;
+      &::after {
+         right: 20px;
+         left: unset;
 
-            @include v.responsive(1400px) {
-                display: none;
-            }
-        }
-
-        &::before {
-            @include v.responsive(1400px) {
-                width: calc(100% - 20px - 140px);
-                bottom: -10px;
-                right: 0;
-                left: unset;
-            }
-
-            @include v.responsive(768px) {
-                width: calc(100% - 20px - 110px);
-            }
-
-            @include v.responsive(500px) {
-                width: calc(100% - 85px);
-                right: -15px;
-            }
-        }
-
-        .formModalTrigger{
-            height: 150px;
-            width: 150px;
-            background: red;
-            position: absolute;
-            top: 120px;
-            right: 10px;
-            border-radius: 50%;
-        }
-    }
-
-    menu {
-        display: flex;
-        flex-direction: row;
-        list-style-type: none;
-        align-items: center;
-
-        .navMail svg {
+         @include v.responsive(1400px) {
             display: none;
+         }
+      }
 
-            @include v.responsive(1400px) {
-                display: block;
-                margin-right: 1rem;
-            }
-        }
+      &::before {
+         @include v.responsive(1400px) {
+            width: calc(100% - 20px - 140px);
+            bottom: -10px;
+            right: 0;
+            left: unset;
+         }
 
-        .navHome,
-        .navMail span {
-            @include v.responsive(1400px) {
-                display: none;
-            }
-        }
+         @include v.responsive(768px) {
+            width: calc(100% - 20px - 110px);
+         }
 
-        li {
-            margin: 0 1rem;
+         @include v.responsive(500px) {
+            width: calc(100% - 85px);
+            right: -15px;
+         }
+      }
+   }
 
-            @include v.responsive(1400px) {
-                margin: 0 .5rem;
-            }
-        }
+   menu {
+      display: flex;
+      flex-direction: row;
+      list-style-type: none;
+      align-items: center;
 
-        a {
-            font-weight: bold;
-            text-decoration: none;
-            letter-spacing: 0.1rem;
-            transition: .2s;
+      .navMail svg {
+         display: none;
 
-            @include v.responsive(1400px) {
-                font-size: .8rem;
-            }
+         @include v.responsive(1400px) {
+            display: block;
+            margin-right: 1rem;
+         }
+      }
 
-            &.active,
-            &:hover {
-                color: v.$highlightColorOrange;
-            }
-        }
-    }
+      .navHome,
+      .navMail span {
+         @include v.responsive(1400px) {
+            display: none;
+         }
+      }
 
-    menu.navMain {
-        @include v.responsive(768px) {
-            position: fixed;
-            left: -15px;
-            top: 75px;
-            height: calc(100vh - 75px);
-            width: calc(100% + 30px);
-            /**** width 100vw doesn't work because of the scroll bar ****/
-            padding: 4rem 15px 0 15px;
-            flex-direction: column;
-            align-items: flex-start;
-            transform: translateX(110%);
-            transition: .4s;
-        }
+      li {
+         margin: 0 1rem;
 
-        li {
+         @include v.responsive(1400px) {
+            margin: 0 0.5rem;
+         }
+      }
+
+      a {
+         font-weight: bold;
+         text-decoration: none;
+         letter-spacing: 0.1rem;
+         transition: 0.2s;
+
+         @include v.responsive(1400px) {
+            font-size: 0.8rem;
+         }
+
+         &.active,
+         &:hover {
+            color: v.$highlightColorOrange;
+         }
+      }
+   }
+
+   menu.navMain {
+      @include v.responsive(768px) {
+         position: fixed;
+         left: -15px;
+         top: 75px;
+         height: calc(100vh - 75px);
+         width: calc(100% + 30px);
+         /**** width 100vw doesn't work because of the scroll bar ****/
+         padding: 4rem 15px 0 15px;
+         flex-direction: column;
+         align-items: flex-start;
+         transform: translateX(110%);
+         transition: 0.4s;
+      }
+
+      li {
+         @include v.responsive(768px) {
+            margin: 0;
+            border-bottom: 2px dashed currentColor;
+            width: calc(100% - 30px);
+            margin: 0 15px;
+         }
+
+         &:first-child {
             @include v.responsive(768px) {
-                margin: 0;
-                border-bottom: 2px dashed currentColor;
-                width: calc(100% - 30px);
-                margin: 0 15px;
+               border-top: 2px dashed currentColor;
             }
+         }
 
-            &:first-child {
-                @include v.responsive(768px) {
-                    border-top: 2px dashed currentColor;
-                }
+         &:last-child {
+            margin-right: 0.5;
+
+            @include v.responsive(1400px) {
+               margin-right: 0;
             }
+         }
 
-            &:last-child {
-                margin-right: .5;
+         a {
+            text-transform: uppercase;
 
-                @include v.responsive(1400px) {
-                    margin-right: 0;
-                }
+            @include v.responsive(768px) {
+               /*** font size h4 ***/
+               font-size: 1.5rem;
+               line-height: 1.9rem;
+               display: block;
+               padding: 1rem 0;
             }
+         }
+      }
+   }
 
-            a {
-                text-transform: uppercase;
+   #mobileNavTrigger {
+      display: none;
+      width: 40px;
+      height: 40px;
+      border: 2px solid currentColor;
+      border-radius: 50%;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: 0.2s;
 
-                @include v.responsive(768px) {
-                    /*** font size h4 ***/
-                    font-size: 1.5rem;
-                    line-height: 1.9rem;
-                    display: block;
-                    padding: 1rem 0;
-                }
+      @include v.responsive(768px) {
+         display: flex;
+      }
 
-            }
-        }
-    }
+      &:hover {
+         opacity: 0.7;
+      }
 
-    #mobileNavTrigger {
-        display: none;
-        width: 40px;
-        height: 40px;
-        border: 2px solid currentColor;
-        border-radius: 50%;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        transition: .2s;
+      span {
+         position: relative;
+         width: 25px;
+         height: 2px;
+         background-color: currentColor;
+         transition: 0.4s;
 
-        @include v.responsive(768px) {
-            display: flex;
-        }
-
-        &:hover {
-            opacity: .7;
-        }
-
-        span {
-            position: relative;
-            width: 25px;
+         &::before,
+         &::after {
+            content: "";
+            width: 100%;
             height: 2px;
+            position: absolute;
+            left: 0;
             background-color: currentColor;
-            transition: .4s;
+            transform-origin: center;
+            transition: 0.4s;
+         }
 
-            &::before,
-            &::after {
-                content: '';
-                width: 100%;
-                height: 2px;
-                position: absolute;
-                left: 0;
-                background-color: currentColor;
-                transform-origin: center;
-                transition: .4s;
-            }
+         &::before {
+            top: -7px;
+         }
 
-            &::before {
-                top: -7px;
-            }
-
-            &::after {
-                bottom: -7px;
-            }
-        }
-    }
-
+         &::after {
+            bottom: -7px;
+         }
+      }
+   }
 }
 
-.formModal{
-    position: fixed;
-    height: 100vh;
-    width: 100%;
-    background-color: green;
-    z-index: 110;
-    pointer-events: none;
-    opacity: 0;
-    transition: 0.2s ease-in-out;
-    &.active{
-        pointer-events: all;
-        opacity: 1;
-    }
+.formModal {
+   position: fixed;
+   height: 100vh;
+   width: 100%;
+   z-index: 99;
+   pointer-events: none;
+   opacity: 0;
+   transition: 0.2s ease-in-out;
+   backdrop-filter: blur(10px);
+
+   &.active {
+      pointer-events: all;
+      opacity: 1;
+   }
+
+   .wrapper {
+      overflow: visible;
+      width: 830px;
+      margin-top: 250px;
+   }
+
+   .formCross {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 60px;
+      width: 60px;
+      background-color: v.$highlightColorRed;
+      color: v.$textColorLight;
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      border-radius: 50%;
+      transition: 0.2s ease;
+      &:hover {
+         background-color: v.$highlightColorOrange;
+         cursor: pointer;
+      }
+   }
+
+   form {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 30px;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 26px;
+      color: v.$textColorDark;
+
+      textarea,
+      select,
+      option,
+      input {
+         all: unset;
+         box-sizing: border-box;
+      }
+
+      span {
+         position: relative;
+         height: 100%;
+
+         &::after {
+            content: "";
+            background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='22' ry='22' stroke='%233C4646FF' stroke-width='6' stroke-dasharray='2%2c 12' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+            border-radius: 20px;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 3;
+            opacity: 0;
+            transition: 0.2s ease-in-out;
+         }
+
+         &:has(input:focus, textarea:focus)::after {
+            opacity: 1;
+         }
+
+         &:has(textarea) {
+            grid-column: span 2;
+         }
+      }
+
+      label {
+         position: absolute;
+         z-index: 3;
+         text-transform: uppercase;
+         line-height: 50px;
+         left: 20px;
+         opacity: 0.5;
+         pointer-events: none;
+
+         &:has(
+               ~ input:not(:placeholder-shown),
+               ~ textarea:not(:placeholder-shown, ~ select > option:checked)
+            ) {
+            opacity: 0;
+         }
+      }
+
+      option,
+      select {
+         line-height: 50px;
+      }
+
+      option,
+      select,
+      textarea,
+      input {
+         height: 50px;
+         width: 100%;
+         background-color: v.$textColorLight;
+         border-radius: 50px;
+         padding: 0 20px;
+      }
+
+      textarea {
+         height: 100%;
+         min-height: 150px;
+         padding: 10px 20px;
+         border-radius: 25px;
+      }
+   }
 }
 
 body.mobileNavActive #mobileNavTrigger span {
-    background-color: unset;
+   background-color: unset;
 
-    &::before {
-        top: 0;
-        transform: rotate(45deg);
-    }
+   &::before {
+      top: 0;
+      transform: rotate(45deg);
+   }
 
-    &::after {
-        bottom: 0;
-        transform: rotate(-45deg);
-    }
+   &::after {
+      bottom: 0;
+      transform: rotate(-45deg);
+   }
 }
 
 @include v.responsive(768px) {
-    .mobileFullscreenBlur {
-        position: fixed;
-        top: 0;
-        left: 0;
-        display: block;
-        height: 100%;
-        width: 100%;
-        pointer-events: none;
-        backdrop-filter: blur(10px) opacity(0);
-        z-index: 98;
-        transition: .4s;
-    }
+   .mobileFullscreenBlur {
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: block;
+      height: 100%;
+      width: 100%;
+      pointer-events: none;
+      backdrop-filter: blur(10px) opacity(0);
+      z-index: 98;
+      transition: 0.4s;
+   }
 
-    body.mobileNavActive .mobileFullscreenBlur {
-        backdrop-filter: blur(10px) opacity(1);
-    }
+   body.mobileNavActive .mobileFullscreenBlur {
+      backdrop-filter: blur(10px) opacity(1);
+   }
 
-    body.mobileNavActive nav menu.navMain {
-        transform: translateX(0);
-    }
+   body.mobileNavActive nav menu.navMain {
+      transform: translateX(0);
+   }
 }
