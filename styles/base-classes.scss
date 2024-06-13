@@ -37,6 +37,10 @@ picture {
    position: relative;
 }
 
+button {
+   all: unset;
+}
+
 /* ESSENTIAL CLASSES */
 
 .backgroundDark {
@@ -101,10 +105,29 @@ main {
       border-radius: 22px;
       z-index: 98;
       pointer-events: all;
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(5px);
       display: flex;
       justify-content: center;
       align-items: center;
+      @include v.responsive(1024px) {
+         height: 120px;
+         width: 120px;
+      }
+
+      @include v.responsive(768px) {
+         height: 100px;
+         width: 100px;
+      }
+
+      @include v.responsive(650px) {
+         right: 15px;
+      }
+
+      @include v.responsive(500px) {
+         top: 80px;
+         height: 70px;
+         width: 70px;
+      }
 
       &::before {
          content: "";
@@ -120,12 +143,6 @@ main {
          transition: 0.2s ease;
       }
 
-      svg {
-         height: 65px;
-      }
-      path {
-         transition: 0.2s ease;
-      }
       &:hover svg,
       &:hover path,
       &:hover {
@@ -133,14 +150,32 @@ main {
          fill: v.$highlightColorOrange !important;
          cursor: pointer;
       }
+
       &:hover::before {
          background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='22' ry='22' stroke='%23E66446FF' stroke-width='4' stroke-dasharray='4%2c 8' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+      }
+
+      svg {
+         height: 65px;
+         @include v.responsive(1024px) {
+            height: 55px;
+         }
+         @include v.responsive(768px) {
+            height: 50px;
+         }
+         @include v.responsive(500px) {
+            height: 35px;
+         }
+      }
+      path {
+         transition: 0.2s ease;
       }
    }
 }
 
 /* Button Class */
 
+button.button,
 a.button {
    box-sizing: border-box;
    position: relative;
@@ -148,6 +183,8 @@ a.button {
    display: flex;
    justify-content: center;
    align-items: center;
+   transition: 0.2s ease-in-out;
+   cursor: pointer;
 
    min-height: 50px;
    min-width: 245px;
@@ -723,6 +760,16 @@ nav {
       overflow: visible;
       width: 830px;
       margin-top: 250px;
+      max-width: calc(100% - 160px);
+      @include v.responsive(1024px) {
+         margin-top: 200px;
+      }
+      @include v.responsive(768px) {
+         max-width: calc(100% - 80px);
+      }
+      @include v.responsive(550px) {
+         max-width: calc(100% - 30px);
+      }
    }
 
    .formCross {
@@ -742,6 +789,15 @@ nav {
          background-color: v.$highlightColorOrange;
          cursor: pointer;
       }
+      @include v.responsive(768px) {
+         height: 50px;
+         width: 50px;
+         top: -75px;
+         right: -0;
+         svg {
+            transform: scale(0.8);
+         }
+      }
    }
 
    form {
@@ -752,6 +808,10 @@ nav {
       font-size: 20px;
       line-height: 26px;
       color: v.$textColorDark;
+      @include v.responsive(768px) {
+         grid-template-columns: repeat(1, minmax(0, 1fr));
+         gap: 20px;
+      }
 
       textarea,
       select,
@@ -783,8 +843,16 @@ nav {
             opacity: 1;
          }
 
-         &:has(textarea) {
-            grid-column: span 2;
+         @include v.responsive(768px, min-width) {
+            &:has(textarea) {
+               grid-column: span 2;
+            }
+            &:has(button) {
+               grid-column: span 2;
+               button {
+                  margin: auto;
+               }
+            }
          }
       }
 
@@ -796,10 +864,9 @@ nav {
          left: 20px;
          opacity: 0.5;
          pointer-events: none;
-
          &:has(
                ~ input:not(:placeholder-shown),
-               ~ textarea:not(:placeholder-shown, ~ select > option:checked)
+               ~ textarea:not(:placeholder-shown)
             ) {
             opacity: 0;
          }
@@ -854,7 +921,7 @@ body.mobileNavActive #mobileNavTrigger span {
       width: 100%;
       pointer-events: none;
       backdrop-filter: blur(10px) opacity(0);
-      z-index: 98;
+      z-index: 99;
       transition: 0.4s;
    }
 

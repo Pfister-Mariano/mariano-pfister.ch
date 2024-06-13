@@ -36,6 +36,10 @@ picture {
   position: relative;
 }
 
+button {
+  all: unset;
+}
+
 /* ESSENTIAL CLASSES */
 .backgroundDark {
   background: #6E96A5 url(../content/images/background-noise-20.png);
@@ -99,10 +103,34 @@ main .formModalTrigger {
   border-radius: 22px;
   z-index: 98;
   pointer-events: all;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(5px);
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media only screen and (max-width: 1024px) {
+  main .formModalTrigger {
+    height: 120px;
+    width: 120px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  main .formModalTrigger {
+    height: 100px;
+    width: 100px;
+  }
+}
+@media only screen and (max-width: 650px) {
+  main .formModalTrigger {
+    right: 15px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  main .formModalTrigger {
+    top: 80px;
+    height: 70px;
+    width: 70px;
+  }
 }
 main .formModalTrigger::before {
   content: "";
@@ -117,12 +145,6 @@ main .formModalTrigger::before {
   border-radius: 22px;
   transition: 0.2s ease;
 }
-main .formModalTrigger svg {
-  height: 65px;
-}
-main .formModalTrigger path {
-  transition: 0.2s ease;
-}
 main .formModalTrigger:hover svg, main .formModalTrigger:hover path, main .formModalTrigger:hover {
   color: #E66446;
   fill: #E66446 !important;
@@ -131,8 +153,30 @@ main .formModalTrigger:hover svg, main .formModalTrigger:hover path, main .formM
 main .formModalTrigger:hover::before {
   background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='22' ry='22' stroke='%23E66446FF' stroke-width='4' stroke-dasharray='4%2c 8' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
 }
+main .formModalTrigger svg {
+  height: 65px;
+}
+@media only screen and (max-width: 1024px) {
+  main .formModalTrigger svg {
+    height: 55px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  main .formModalTrigger svg {
+    height: 50px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  main .formModalTrigger svg {
+    height: 35px;
+  }
+}
+main .formModalTrigger path {
+  transition: 0.2s ease;
+}
 
 /* Button Class */
+button.button,
 a.button {
   box-sizing: border-box;
   position: relative;
@@ -140,6 +184,8 @@ a.button {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
   min-height: 50px;
   min-width: 245px;
   width: -webkit-max-content;
@@ -157,10 +203,12 @@ a.button {
   border-radius: 25px;
 }
 @media only screen and (max-width: 550px) {
+  button.button,
   a.button {
     min-width: unset;
   }
 }
+button.button::before,
 a.button::before {
   content: "";
   transition: 0.2s ease-in-out;
@@ -171,16 +219,20 @@ a.button::before {
   mask-image: url(../content/icons/chevrons-right.svg);
   background-color: #F1ECDC;
 }
+button.button.mailIcon::before,
 a.button.mailIcon::before {
   mask-image: url(../content/icons/envelope.svg);
 }
+button.button.scrolldownIcon::before,
 a.button.scrolldownIcon::before {
   mask-image: url(../content/icons/arrow-down-from-line.svg);
   width: 20px;
 }
+button.button.externalLinkIcon::before,
 a.button.externalLinkIcon::before {
   mask-image: url(../content/icons/arrow-up-right-from-square.svg);
 }
+button.button:hover,
 a.button:hover {
   background-color: #E66446;
 }
@@ -683,6 +735,22 @@ nav #mobileNavTrigger span::after {
   overflow: visible;
   width: 830px;
   margin-top: 250px;
+  max-width: calc(100% - 160px);
+}
+@media only screen and (max-width: 1024px) {
+  .formModal .wrapper {
+    margin-top: 200px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .formModal .wrapper {
+    max-width: calc(100% - 80px);
+  }
+}
+@media only screen and (max-width: 550px) {
+  .formModal .wrapper {
+    max-width: calc(100% - 30px);
+  }
 }
 .formModal .formCross {
   display: flex;
@@ -702,6 +770,17 @@ nav #mobileNavTrigger span::after {
   background-color: #E66446;
   cursor: pointer;
 }
+@media only screen and (max-width: 768px) {
+  .formModal .formCross {
+    height: 50px;
+    width: 50px;
+    top: -75px;
+    right: 0;
+  }
+  .formModal .formCross svg {
+    transform: scale(0.8);
+  }
+}
 .formModal form {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -710,6 +789,12 @@ nav #mobileNavTrigger span::after {
   font-size: 20px;
   line-height: 26px;
   color: #393939;
+}
+@media only screen and (max-width: 768px) {
+  .formModal form {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 20px;
+  }
 }
 .formModal form textarea,
 .formModal form select,
@@ -738,8 +823,16 @@ nav #mobileNavTrigger span::after {
 .formModal form span:has(input:focus, textarea:focus)::after {
   opacity: 1;
 }
-.formModal form span:has(textarea) {
-  grid-column: span 2;
+@media only screen and (min-width: 768px) {
+  .formModal form span:has(textarea) {
+    grid-column: span 2;
+  }
+  .formModal form span:has(button) {
+    grid-column: span 2;
+  }
+  .formModal form span:has(button) button {
+    margin: auto;
+  }
 }
 .formModal form label {
   position: absolute;
@@ -749,6 +842,10 @@ nav #mobileNavTrigger span::after {
   left: 20px;
   opacity: 0.5;
   pointer-events: none;
+}
+.formModal form label:has(~ input:not(:placeholder-shown),
+~ textarea:not(:placeholder-shown)) {
+  opacity: 0;
 }
 .formModal form option,
 .formModal form select {
@@ -793,7 +890,7 @@ body.mobileNavActive #mobileNavTrigger span::after {
     width: 100%;
     pointer-events: none;
     backdrop-filter: blur(10px) opacity(0);
-    z-index: 98;
+    z-index: 99;
     transition: 0.4s;
   }
   body.mobileNavActive .mobileFullscreenBlur {
