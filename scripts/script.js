@@ -18,13 +18,13 @@ formTrigger.forEach(function (elem) {
 
 
 /**
-*  TODO: 1. "required" CSS klasse
-*  TODO: 2. Validation abhänging von klasse und nicht von id
-*  TODO: 3. Validation ausgeführt bei(click auf button, keyup bei feld, auswahl bei dropdown)
+* *  TODO: 1. "required" CSS klasse
+* *  TODO: 2. Validation abhänging von klasse und nicht von id
+* *  TODO: 3. Validation ausgeführt bei(click auf button, keyup bei feld)
 *  TODO: 4. Fehlermeldungen bei falschen Feldern sollten verschwinden bei "keyup"
 *  TODO: 5. Dropdown verbessern falls möglich
 *  TODO: 6. Konvertieren in JSON
-*  TODO: 7. Telefon + Mail mit RegEx
+* *  TODO: 7. Telefon + Mail mit RegEx
 **/
 
 document.querySelector('button[type="submit"]').addEventListener('click', function(event){
@@ -32,20 +32,56 @@ document.querySelector('button[type="submit"]').addEventListener('click', functi
     validateForm(event);
 });
 
+document.querySelectorAll('form.wrongInput input').forEach(element => {
+    element.addEventListener('keydown', function(event){
+        validateForm(event);
+    })
+});
+
+
 function validateForm(event) {
     let data = {};
     let validationErrors = {};
-
     let allFields = document.querySelectorAll('input, textarea, select');
+
+    const nameRegex = /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžæÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u;
+    const mailRegex = /(.+)@(.+){2,}\.(.+){2,}/;
+    const phoneRegex = /(\b(0041|0)|\B\+41)(\s?\(0\))?(\s)?[1-9]{2}(\s)?[0-9]{3}(\s)?[0-9]{2}(\s)?[0-9]{2}\b/;
+
+    function validateCheck(fieldClasses, value){
+        if (fieldClasses.classList.contains('required') && value === "") {
+            return false;
+        } else if (value !== ""){
+            return true;
+        }
+    };
 
     for(let i = 0; i < allFields.length; i++){  
         let fieldName = allFields[i].getAttribute('name');
-        data[fieldName] = allFields[i].value;
+        let fieldValue = allFields[i].value;
+        data[fieldName] = fieldValue;
+        
+        if(allFields[i].classList.contains('required') && fieldValue === ""){
+            validationErrors[fieldName] = "This field is required and should not be empty";
+            continue;
+        }
 
-        if(allFields[i].classList.contains('required')){
-            console.log(allFields[i].value)
+        if (allFields[i].classList.contains('nameValidation') && validateCheck(allFields[i], fieldValue) && nameRegex.test(fieldValue) === false) {
+            validationErrors[fieldName] = "This name is invalid. Please only use letters and spaces";
+            continue;
+        }
+
+        if (allFields[i].classList.contains('mailValidation') && validateCheck(allFields[i], fieldValue) && mailRegex.test(fieldValue) === false) {
+            validationErrors[fieldName] = "Invalid email address";
+            continue;
+        }
+
+        if (allFields[i].classList.contains('phoneValidation') && validateCheck(allFields[i], fieldValue) && phoneRegex.test(fieldValue) === false) {
+            validationErrors[fieldName] = "invalid phone number";
+            continue;
         }
     }
+    console.log(validationErrors)
 }
 
 
