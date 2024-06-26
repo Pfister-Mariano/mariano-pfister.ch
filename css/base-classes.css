@@ -784,7 +784,8 @@ nav #mobileNavTrigger span::after {
 .formModal form {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 30px;
+  row-gap: 40px;
+  column-gap: 20px;
   font-weight: bold;
   font-size: 20px;
   line-height: 26px;
@@ -793,8 +794,36 @@ nav #mobileNavTrigger span::after {
 @media only screen and (max-width: 768px) {
   .formModal form {
     grid-template-columns: repeat(1, minmax(0, 1fr));
-    gap: 20px;
+    row-gap: 30px;
   }
+}
+.formModal form .errorMessage {
+  z-index: 5;
+  position: absolute;
+  top: 5px;
+  left: 20px;
+  transform: translateY(-100%);
+  display: block;
+  width: max-content;
+  font-size: 1rem;
+  line-height: 1rem;
+  font-weight: normal;
+  color: #f1ecdc;
+  padding: 0.5rem 20px;
+  background: #e66446;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.75);
+  border-radius: 50px;
+}
+.formModal form .errorMessage::after {
+  content: "";
+  display: block;
+  background: #e66446;
+  clip-path: polygon(51% 100%, 0 0, 100% 0);
+  height: 10px;
+  position: absolute;
+  width: 25px;
+  bottom: 0px;
+  transform: translateY(90%);
 }
 .formModal form textarea,
 .formModal form select,

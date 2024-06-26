@@ -1,6 +1,6 @@
 mobileNavTrigger.onclick = function () {
     document.body.classList.toggle('mobileNavActive');
-    if(document.querySelector('.formModal').classList.contains('active')){
+    if (document.querySelector('.formModal').classList.contains('active')) {
         document.querySelector('.formModalTrigger').click()
     }
 }
@@ -9,7 +9,7 @@ let formTrigger = document.querySelectorAll('.formModalTrigger');
 formTrigger.forEach(function (elem) {
     elem.addEventListener('click', function () {
         document.querySelector('.formModal').classList.toggle('active')
-        
+
     })
 });
 
@@ -17,25 +17,19 @@ formTrigger.forEach(function (elem) {
 //! Validation Übung
 
 
-/**
-* *  TODO: 1. "required" CSS klasse
-* *  TODO: 2. Validation abhänging von klasse und nicht von id
-* *  TODO: 3. Validation ausgeführt bei(click auf button, keyup bei feld)
-*  TODO: 4. Fehlermeldungen bei falschen Feldern sollten verschwinden bei "keyup"
-*  TODO: 5. Dropdown verbessern falls möglich
-*  TODO: 6. Konvertieren in JSON
-* *  TODO: 7. Telefon + Mail mit RegEx
-**/
+/*  
 
-document.querySelector('button[type="submit"]').addEventListener('click', function(event){
+TODO: Fehlermeldungen bei falschen Feldern sollten verschwinden bei "keyup" 
+TODO: - Keyup eventlistener
+TODO: - validation mit ifs in eigene function nicht in loop
+TODO: - keyup validiert momentanes Feld
+
+*/
+
+
+document.querySelector('button[type="submit"]').addEventListener('click', function (event) {
     event.preventDefault();
     validateForm(event);
-});
-
-document.querySelectorAll('form.wrongInput input').forEach(element => {
-    element.addEventListener('keydown', function(event){
-        validateForm(event);
-    })
 });
 
 
@@ -48,41 +42,72 @@ function validateForm(event) {
     const mailRegex = /(.+)@(.+){2,}\.(.+){2,}/;
     const phoneRegex = /(\b(0041|0)|\B\+41)(\s?\(0\))?(\s)?[1-9]{2}(\s)?[0-9]{3}(\s)?[0-9]{2}(\s)?[0-9]{2}\b/;
 
-    function validateCheck(fieldClasses, value){
+    function validateCheck(fieldClasses, value) {
         if (fieldClasses.classList.contains('required') && value === "") {
             return false;
-        } else if (value !== ""){
+        } else if (value !== "") {
             return true;
         }
     };
 
-    for(let i = 0; i < allFields.length; i++){  
+    for (let i = 0; i < allFields.length; i++) {
         let fieldName = allFields[i].getAttribute('name');
         let fieldValue = allFields[i].value;
         data[fieldName] = fieldValue;
-        
-        if(allFields[i].classList.contains('required') && fieldValue === ""){
-            validationErrors[fieldName] = "This field is required and should not be empty";
+
+        let errorMessage = {
+            element: allFields[i],
+            message: ''
+        }
+
+        if (validateCheck(allFields[i], fieldValue) === false) {
+            errorMessage.message = "This field is required";
+            validationErrors[fieldName] = errorMessage;
             continue;
         }
 
         if (allFields[i].classList.contains('nameValidation') && validateCheck(allFields[i], fieldValue) && nameRegex.test(fieldValue) === false) {
-            validationErrors[fieldName] = "This name is invalid. Please only use letters and spaces";
+            errorMessage.message = "This name is invalid. Please only use letters and spaces";
+            validationErrors[fieldName] = errorMessage;
             continue;
         }
 
         if (allFields[i].classList.contains('mailValidation') && validateCheck(allFields[i], fieldValue) && mailRegex.test(fieldValue) === false) {
-            validationErrors[fieldName] = "Invalid email address";
+            errorMessage.message = "Invalid email address";
+            validationErrors[fieldName] = errorMessage;
             continue;
         }
 
         if (allFields[i].classList.contains('phoneValidation') && validateCheck(allFields[i], fieldValue) && phoneRegex.test(fieldValue) === false) {
-            validationErrors[fieldName] = "invalid phone number";
+            errorMessage.message = "Invalid phone number";
+            validationErrors[fieldName] = errorMessage;
             continue;
         }
+        
     }
-    console.log(validationErrors)
+
+    if (Object.keys(validationErrors).length === 0) {
+        console.log(data);
+    } else {
+        displayErrors(validationErrors);
+    }
 }
+
+function displayErrors(validationErrors) {
+    document.querySelectorAll('.errorMessage').forEach(element => element.remove());
+
+    for (let error in validationErrors) {
+        
+        let errorElement = document.createElement('div');
+        errorElement.classList.add('errorMessage');
+        errorElement.innerText = validationErrors[error].message;
+
+        if (validationErrors[error].element.parentElement.querySelector('.errorMessage') === null) {
+            validationErrors[error].element.after(errorElement);
+        }
+    }
+}
+
 
 
 /*
