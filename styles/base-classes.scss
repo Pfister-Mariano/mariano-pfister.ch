@@ -742,6 +742,7 @@ nav {
 }
 
 .formModal {
+   overflow: scroll;
    position: fixed;
    height: 100vh;
    width: 100%;
@@ -757,6 +758,7 @@ nav {
    }
 
    .wrapper {
+      padding-bottom: 5rem;
       overflow: visible;
       width: 830px;
       margin-top: 250px;

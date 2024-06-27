@@ -718,6 +718,7 @@ nav #mobileNavTrigger span::after {
 }
 
 .formModal {
+  overflow: scroll;
   position: fixed;
   height: 100vh;
   width: 100%;
@@ -732,6 +733,7 @@ nav #mobileNavTrigger span::after {
   opacity: 1;
 }
 .formModal .wrapper {
+  padding-bottom: 5rem;
   overflow: visible;
   width: 830px;
   margin-top: 250px;
