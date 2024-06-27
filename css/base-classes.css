@@ -718,7 +718,7 @@ nav #mobileNavTrigger span::after {
 }
 
 .formModal {
-  overflow: scroll;
+  overflow-y: scroll;
   position: fixed;
   height: 100vh;
   width: 100%;
