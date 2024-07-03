@@ -20,7 +20,8 @@ document.querySelector('button[type="submit"]').addEventListener('click', functi
 });
 
 document.querySelectorAll('.formModal input').forEach(function (elem) {
-    elem.addEventListener('focusout', function (event) {
+    elem.addEventListener('change', function (event) {
+        document.querySelectorAll('.errorMessage').forEach(element => element.remove());
         let fieldError = [validateField(elem, elem.value)]
         if (fieldError[0] !== undefined) {
             displayErrors(fieldError);
@@ -63,6 +64,8 @@ function validateCheck(fieldClasses, value) {
 function validateField(element, fieldValue) {
     const nameRegex = /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžæÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u;
     const mailRegex = /(.+)@(.+){2,}\.(.+){2,}/;
+    const placeRegex = /^\d{4}[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžæÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,}.*$/;
+    const adressRegex = /^[0-9a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžæÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,}$/;
     const phoneRegex = /(\b(0041|0)|\B\+41)(\s?\(0\))?(\s)?[1-9]{2}(\s)?[0-9]{3}(\s)?[0-9]{2}(\s)?[0-9]{2}\b/;
 
     let errorMessage = {
@@ -72,25 +75,31 @@ function validateField(element, fieldValue) {
 
     if (validateCheck(element, fieldValue) === false) {
         errorMessage.message = "This field is required";
-        // validationErrors[fieldName] = errorMessage;
         return errorMessage;
     }
 
     if (element.classList.contains('nameValidation') && validateCheck(element, fieldValue) && nameRegex.test(fieldValue) === false) {
-        errorMessage.message = "This name is invalid. Please only use letters and spaces";
-        // validationErrors[fieldName] = errorMessage;
+        errorMessage.message = "Please only use letters and spaces";
         return errorMessage;
     }
 
     if (element.classList.contains('mailValidation') && validateCheck(element, fieldValue) && mailRegex.test(fieldValue) === false) {
         errorMessage.message = "Invalid email address";
-        // validationErrors[fieldName] = errorMessage;
         return errorMessage;
     }
 
     if (element.classList.contains('phoneValidation') && validateCheck(element, fieldValue) && phoneRegex.test(fieldValue) === false) {
         errorMessage.message = "Invalid phone number";
-        // validationErrors[fieldName] = errorMessage;
+        return errorMessage;
+    }
+
+    if (element.classList.contains('placeValidation') && validateCheck(element, fieldValue) && placeRegex.test(fieldValue) === false) {
+        errorMessage.message = "Enter the zip code followed by the place name";
+        return errorMessage;
+    }
+
+    if (element.classList.contains('adressValidation') && validateCheck(element, fieldValue) && adressRegex.test(fieldValue) === false) {
+        errorMessage.message = "Please enter a valid street name";
         return errorMessage;
     }
 }
