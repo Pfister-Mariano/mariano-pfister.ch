@@ -28,7 +28,8 @@
    <meta name="msapplication-TileColor" content="#da532c">
    <meta name="theme-color" content="#ffffff">
 
-   <script src="scripts/script.js" type="text/javascript" defer></script>
+   <script src="scripts/form.js" type="text/javascript" defer></script>
+   <script src="scripts/slider.js" type="text/javascript" defer></script>
 </head>
 
 <body>
@@ -77,7 +78,12 @@
    <div class="formModal">
       <div class="wrapper">
          <div class="formModalTrigger formCross">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32.121" height="32.121"><g data-name="Gruppe 261" fill="none" stroke="currentColor" stroke-width="3"><path data-name="Linie 62" d="m1.061 1.061 30 30"/><path data-name="Linie 63" d="m31.061 1.061-30 30"/></g></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="32.121" height="32.121">
+               <g data-name="Gruppe 261" fill="none" stroke="currentColor" stroke-width="3">
+                  <path data-name="Linie 62" d="m1.061 1.061 30 30" />
+                  <path data-name="Linie 63" d="m31.061 1.061-30 30" />
+               </g>
+            </svg>
          </div>
          <form action="">
             <span>
@@ -85,7 +91,7 @@
                   <option value="">Anrede</option>
                   <option value="herr">Herr</option>
                   <option value="frau">Frau</option>
-                </select>
+               </select>
             </span>
             <span>
                <label for="firma">Firma</label>
@@ -149,17 +155,66 @@
             </div>
          </section>
       </header>
+
       <section id="teaser" class="teaserLeftRight backgroundLight">
          <div class="wrapper wrapperSmall">
             <article>
-               <picture class="teaserImg imgRatio-4-3">
-                  <source srcset="content/images/webp-50/portfolio-mariano-about.webp" type="image/webp"
-                     media="(max-width: 600px)">
-                  <source srcset="content/images/webp-100/portfolio-mariano-about.webp" type="image/webp"
-                     media="(min-width: 601px)">
-                  <img src="content/images/original/portfolio-mariano-about.jpg"
-                     alt="Portrait von Mariano vor fahrenden Autos">
-               </picture>
+
+               <div class="teaserImage imageSlider">
+                  <div class="sliderControls">
+                     <div class="sliderShadow"></div>
+                     <div class="sliderPagination">
+<!--                         <span class="active"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span> -->
+                     </div>
+                     <div class="sliderButtons">
+                        <div class="prevSlide">
+                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                              <path
+                                 d="M2.7 256l22.6 22.6 192 192L240 493.3 285.3 448l-22.6-22.6L93.3 256 262.6 86.6 285.3 64 240 18.7 217.4 41.4l-192 192L2.7 256z" />
+                           </svg>
+                        </div>
+                        <div class="pauseSlide">
+                           <svg class="pauseIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                              <path d="M128 64H0V448H128V64zm192 0H192V448H320V64z" />
+                           </svg>
+                           <svg class="playIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                              <path d="M384 256L0 32V480L384 256z" />
+                           </svg>
+                        </div>
+                        <div class="nextSlide">
+                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                              <path
+                                 d="M317.3 256l-22.6 22.6-192 192L80 493.3 34.7 448l22.6-22.6L226.7 256 57.4 86.6 34.7 64 80 18.7l22.6 22.6 192 192L317.3 256z" />
+                           </svg>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="imageSlides imgRatio-4-3">
+                     <picture title="1" class="active">
+                        <source srcset="content/images/webp-50/portfolio-mariano-about.webp" type="image/webp"
+                           media="(max-width: 600px)">
+                        <source srcset="content/images/webp-100/portfolio-mariano-about.webp" type="image/webp"
+                           media="(min-width: 601px)">
+                        <img src="content/images/original/portfolio-mariano-about.jpg"
+                           alt="Portrait von Mariano vor fahrenden Autos">
+                     </picture>
+                     <picture title="2" class="">
+                        <img src="content/images/original/portfolio-mariano-cta-1.jpg">
+                     </picture>
+                     <picture title="3" class="">
+                        <img src="content/images/original/portfolio-mariano-cta-2.jpg">
+                     </picture>
+                     <picture title="4" class="">
+                        <img src="content/images/original/portfolio-mariano-facts-1.jpg">
+                     </picture>
+                  </div>
+
+               </div>
+
                <div class="teaserText">
                   <h3>Über Mich</h3>
                   <p>Lesen Sie mehr über mich, meine Leidenschaften und Hobbys. Machen Sie sich ein besseres Bild von
@@ -173,16 +228,19 @@
                   <h3>Meine Fähigkeiten</h3>
                   <p>Erfahren Sie mehr über mein Kenntnissen und Erfahrungen im Umgang mit Software und Webseiten. Hier
                      finden Sie einen Überblick von all meinen Fähigkeiten</p>
-                  <a class="button" aria-label="Weiter zu der Unterseite Fähigkeiten" href="faehigkeiten.html">Mehr erfahren</a>
+                  <a class="button" aria-label="Weiter zu der Unterseite Fähigkeiten" href="faehigkeiten.html">Mehr
+                     erfahren</a>
                </div>
-               <picture class="teaserImg imgRatio-4-3">
-                  <source srcset="content/images/webp-50/portfolio-mariano-faehigkeiten.webp" type="image/webp"
-                     media="(max-width: 600px)">
-                  <source srcset="content/images/webp-100/portfolio-mariano-faehigkeiten.webp" type="image/webp"
-                     media="(min-width: 601px)">
-                  <img src="content/images/original/portfolio-mariano-faehigkeiten.jpg"
-                     alt="Bild von Laptop mit fokus auf Adobe programmen">
-               </picture>
+               <div class="teaserImage">
+                  <picture class="imgRatio-4-3">
+                     <source srcset="content/images/webp-50/portfolio-mariano-faehigkeiten.webp" type="image/webp"
+                        media="(max-width: 600px)">
+                     <source srcset="content/images/webp-100/portfolio-mariano-faehigkeiten.webp" type="image/webp"
+                        media="(min-width: 601px)">
+                     <img src="content/images/original/portfolio-mariano-faehigkeiten.jpg"
+                        alt="Bild von Laptop mit fokus auf Adobe programmen">
+                  </picture>
+               </div>
             </article>
          </div>
       </section>

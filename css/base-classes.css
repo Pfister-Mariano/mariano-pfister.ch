@@ -717,6 +717,39 @@ nav #mobileNavTrigger span::after {
   bottom: -7px;
 }
 
+body.mobileNavActive #mobileNavTrigger span {
+  background-color: unset;
+}
+body.mobileNavActive #mobileNavTrigger span::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+body.mobileNavActive #mobileNavTrigger span::after {
+  bottom: 0;
+  transform: rotate(-45deg);
+}
+
+@media only screen and (max-width: 768px) {
+  .mobileFullscreenBlur {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: block;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    backdrop-filter: blur(10px) opacity(0);
+    z-index: 99;
+    transition: 0.4s;
+  }
+  body.mobileNavActive .mobileFullscreenBlur {
+    backdrop-filter: blur(10px) opacity(1);
+  }
+  body.mobileNavActive nav menu.navMain {
+    transform: translateX(0);
+  }
+}
+/* Form Modal */
 .formModal {
   overflow-y: scroll;
   position: fixed;
@@ -899,35 +932,121 @@ nav #mobileNavTrigger span::after {
   border-radius: 25px;
 }
 
-body.mobileNavActive #mobileNavTrigger span {
-  background-color: unset;
-}
-body.mobileNavActive #mobileNavTrigger span::before {
-  top: 0;
-  transform: rotate(45deg);
-}
-body.mobileNavActive #mobileNavTrigger span::after {
+/* Slider Styles */
+.sliderControls {
+  height: 100%;
+  width: 100%;
+  position: absolute;
   bottom: 0;
-  transform: rotate(-45deg);
+  left: 0;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.sliderControls .sliderShadow {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 50%;
+  width: 100%;
+  z-index: 2;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+}
+.sliderControls .sliderPagination {
+  display: flex;
+  justify-content: center;
+  z-index: 4;
+  gap: 10px;
+}
+.sliderControls .sliderPagination span {
+  display: block;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  border: 4px solid #F1ECDC;
+  transition: all 0.2s ease-out;
+  cursor: pointer;
+}
+@media only screen and (max-width: 768px) {
+  .sliderControls .sliderPagination span {
+    height: 12px;
+    width: 12px;
+    border: 3px solid #F1ECDC;
+  }
+}
+.sliderControls .sliderPagination span.active {
+  border-color: #A25050;
+  background-color: #A25050;
+}
+.sliderControls .sliderPagination span:hover {
+  border-color: #E66446;
+  background-color: #E66446;
+}
+.sliderControls .sliderButtons {
+  display: flex;
+  justify-content: space-between;
+  z-index: 3;
+  padding: 20px;
+}
+@media only screen and (max-width: 768px) {
+  .sliderControls .sliderButtons {
+    padding: 10px;
+  }
+}
+.sliderControls .sliderButtons > div {
+  height: 45px;
+  width: 45px;
+  background-color: #A25050;
+  border-radius: 50%;
+  transition: all 0.2s ease-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+@media only screen and (max-width: 768px) {
+  .sliderControls .sliderButtons > div {
+    height: 35px;
+    width: 35px;
+  }
+}
+.sliderControls .sliderButtons > div:hover {
+  background-color: #E66446;
+}
+.sliderControls .sliderButtons > div svg {
+  fill: #F1ECDC;
+  display: block;
+  height: 25px;
+  width: 100%;
+}
+@media only screen and (max-width: 768px) {
+  .sliderControls .sliderButtons > div svg {
+    height: 20px;
+  }
 }
 
-@media only screen and (max-width: 768px) {
-  .mobileFullscreenBlur {
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: block;
-    height: 100%;
-    width: 100%;
-    pointer-events: none;
-    backdrop-filter: blur(10px) opacity(0);
-    z-index: 99;
-    transition: 0.4s;
-  }
-  body.mobileNavActive .mobileFullscreenBlur {
-    backdrop-filter: blur(10px) opacity(1);
-  }
-  body.mobileNavActive nav menu.navMain {
-    transform: translateX(0);
-  }
+.imageSlides {
+  position: relative;
+}
+.imageSlides picture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: all 0.2s ease-out;
+}
+.imageSlides picture.active {
+  opacity: 1;
+}
+
+.imageSlider .sliderControls .sliderButtons > div svg.playIcon {
+  display: none;
+}
+.imageSlider.pauseingImageSlider .sliderControls .sliderButtons > div svg.playIcon {
+  display: block;
+}
+.imageSlider.pauseingImageSlider .sliderControls .sliderButtons > div svg.pauseIcon {
+  display: none;
 }/*# sourceMappingURL=base-classes.css.map */
