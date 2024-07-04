@@ -9,8 +9,8 @@ class slider {
     pauseSlide() {
         this.sliderElement.classList.toggle('pauseingImageSlider');
     }
-    prevSlide() {
 
+    prevSlide() {
         if (this.currentSlide === 1 || this.currentSlide === 0) {
             this.allSlides.forEach(element => element.classList.remove('active'));
             this.currentSlide = this.allSlides.length;
@@ -22,6 +22,7 @@ class slider {
         }
         this.updatePagination();
     }
+
     nextSlide() {
         if (this.currentSlide === 1) {
             this.allSlides.forEach(element => element.classList.remove('active'));
@@ -36,9 +37,7 @@ class slider {
             this.allSlides[this.currentSlide - 1].classList.add('active');
             
         }
-
         this.updatePagination();
-
     }
     updatePagination() {
         this.pagination.querySelectorAll('span').forEach(element => {
@@ -62,7 +61,6 @@ document.querySelectorAll('.imageSlider').forEach(element => {
         element.querySelector('.sliderPagination').appendChild(span);
         imageSlider.updatePagination();
     })
-    
 
     let autoSlider = setInterval(autoSlide, 3000)
 
