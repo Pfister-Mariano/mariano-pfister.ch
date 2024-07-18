@@ -13,7 +13,6 @@ formTrigger.forEach(function (elem) {
     })
 });
 
-
 document.querySelector('button[type="submit"]').addEventListener('click', function (event) {
     event.preventDefault();
     validateForm(event);

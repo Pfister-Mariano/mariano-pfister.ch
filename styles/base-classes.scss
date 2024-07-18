@@ -600,12 +600,21 @@ nav {
       list-style-type: none;
       align-items: center;
 
-      .navMail svg {
-         display: none;
+      .navMail {
+         @include v.responsive(768px) {
+            margin-right: 0rem;
+         }
+         svg {
+            display: none;
 
-         @include v.responsive(1400px) {
-            display: block;
-            margin-right: 1rem;
+            @include v.responsive(1400px) {
+               display: block;
+               margin-right: 1rem;
+            }
+            @include v.responsive(768px) {
+               display: block;
+               margin-right: 0rem;
+            }
          }
       }
 
@@ -618,9 +627,11 @@ nav {
 
       li {
          margin: 0 1rem;
-
          @include v.responsive(1400px) {
             margin: 0 0.5rem;
+         }
+         @include v.responsive(768px) {
+            margin: 0 1.5rem;
          }
       }
 
@@ -1063,7 +1074,6 @@ body.mobileNavActive #mobileNavTrigger span {
          }
       }
    }
-
 }
 
 .imageSlides {
