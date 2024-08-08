@@ -947,7 +947,11 @@ body.mobileNavActive #mobileNavTrigger span::after {
   padding: 10px 20px;
   border-radius: 25px;
 }
-
+.formModal form .formInfo{
+  text-align: center;
+  padding-bottom: 1rem;
+  color: #A25050;
+}
 /* Slider Styles */
 .sliderControls {
   height: 100%;

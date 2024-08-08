@@ -19,7 +19,8 @@ document.querySelector('button[type="submit"]').addEventListener('click', functi
 });
 
 document.querySelectorAll('.formModal input').forEach(function (elem) {
-    elem.addEventListener('change', function (event) {
+
+    elem.addEventListener('blur', function (event) {
         document.querySelectorAll('.errorMessage').forEach(element => element.remove());
         let fieldError = [validateField(elem, elem.value)]
         if (fieldError[0] !== undefined) {
@@ -42,7 +43,7 @@ function validateForm(event) {
         if (resolvedError !== undefined) {
             validationErrors[fieldName] = validateField(allFields[i], fieldValue);
         }
-        
+
     }
 
     if (Object.keys(validationErrors).length === 0) {
@@ -61,10 +62,10 @@ function validateCheck(fieldClasses, value) {
 };
 
 function validateField(element, fieldValue) {
-    const nameRegex = /^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžæÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/u;
+    const nameRegex = /^(?!.*[0-9!@#$%^&*()_+=\[\]{}|\\;:"<>/?]).+$/u;
     const mailRegex = /(.+)@(.+){2,}\.(.+){2,}/;
-    const placeRegex = /^\d{4}[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžæÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,}.*$/;
-    const adressRegex = /^[0-9a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžæÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,}$/;
+    const placeRegex = /^\d{4}(?!.*[0-9!@#$%^&*()_+=\[\]{}|\\;:"<>/?`~]).{2,}.*$/u;
+    const addressRegex = /^(?!.*[!@#$%^&*()_+=\[\]{}|\\;:"<>/?`~]).{2,}$/u;
     const phoneRegex = /(\b(0041|0)|\B\+41)(\s?\(0\))?(\s)?[1-9]{2}(\s)?[0-9]{3}(\s)?[0-9]{2}(\s)?[0-9]{2}\b/;
 
     let errorMessage = {
@@ -97,7 +98,7 @@ function validateField(element, fieldValue) {
         return errorMessage;
     }
 
-    if (element.classList.contains('adressValidation') && validateCheck(element, fieldValue) && adressRegex.test(fieldValue) === false) {
+    if (element.classList.contains('adressValidation') && validateCheck(element, fieldValue) && addressRegex.test(fieldValue) === false) {
         errorMessage.message = "Please enter a valid street name";
         return errorMessage;
     }

@@ -4,6 +4,7 @@
          "title": "Lorem ipsum dolor sit amet",
          "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo",
          "image": "portfolio-mariano-faehigkeiten",
+         "image-alt": "portfolio-mariano-faehigkeiten",
          "link": "faehigkeiten.html",
          "linkText": "Mehr erfahren"
       },
@@ -11,6 +12,7 @@
          "title": "Lorem ipsum dolor sit amet",
          "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem",
          "image": "portfolio-mariano-about",
+         "image-alt": "portfolio-mariano-faehigkeiten",
          "link": "ueber-mich.html",
          "linkText": "Mehr erfahren"
       },
@@ -18,6 +20,7 @@
          "title": "Lorem ipsum dolor sit amet",
          "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor ",
          "image": "portfolio-mariano-entwicklung",
+         "image-alt": "portfolio-mariano-faehigkeiten",
          "link": "faehigkeiten.html",
          "linkText": "Mehr erfahren"
       }

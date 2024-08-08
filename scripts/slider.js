@@ -5,7 +5,7 @@ class slider {
         this.allSlides = element.querySelectorAll('.imageSlides picture');
         this.pagination = element.querySelector('.sliderPagination');
     }
-
+    
     pauseSlide() {
         this.sliderElement.classList.toggle('pauseingImageSlider');
     }

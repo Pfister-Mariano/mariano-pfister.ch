@@ -1,7 +1,7 @@
 async function getArticles() {
     try {
         const response = await fetch(
-            `http://127.0.0.1:5500/content/blog.json`
+            `content/blog.json`
         );
         const data = await response.json();
         
