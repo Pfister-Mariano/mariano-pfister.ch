@@ -13,12 +13,12 @@ async function getArticles() {
                   <picture class="teaserImg imgRatio-4-3">
                      <source srcset="content/images/webp-50/${article.image}.webp" type="image/webp" media="(max-width: 600px)" >
                      <source srcset="content/images/webp-100/${article.image}.webp" type="image/webp" media="(min-width: 601px)">
-                     <img src="content/images/original/${article.image}.jpg" alt="${article.title}">
+                     <img src="content/images/original/${article.image}.jpg" alt="${article.imageAlt}">
                   </picture>
                   <div class="teaserText">
-                     <h3>${article.title}</h3>
+                     <h4>${article.title}</h4>
                      <p>${article.text}</p>
-                     <a aria-label="${article.title}" class="button" href="${article.link}">${article.linkText}</a>
+                     <a aria-label="${article.title}" class="button externalLinkIcon" href="${article.link}" target="_blank">${article.linkText}</a>
                   </div>
                </article>
             `

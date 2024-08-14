@@ -89,7 +89,7 @@ function validateField(element, fieldValue) {
     }
 
     if (element.classList.contains('phoneValidation') && validateCheck(element, fieldValue) && phoneRegex.test(fieldValue) === false) {
-        errorMessage.message = "Invalid phone number";
+        errorMessage.message = "Please start with 0041 or +41";
         return errorMessage;
     }
 

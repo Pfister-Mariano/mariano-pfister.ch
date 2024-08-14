@@ -1,28 +1,28 @@
 {
    "articles": [
       {
-         "title": "Lorem ipsum dolor sit amet",
-         "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo",
-         "image": "portfolio-mariano-faehigkeiten",
-         "image-alt": "portfolio-mariano-faehigkeiten",
-         "link": "faehigkeiten.html",
-         "linkText": "Mehr erfahren"
-      },
-      {
-         "title": "Lorem ipsum dolor sit amet",
-         "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem",
-         "image": "portfolio-mariano-about",
-         "image-alt": "portfolio-mariano-faehigkeiten",
-         "link": "ueber-mich.html",
-         "linkText": "Mehr erfahren"
-      },
-      {
-         "title": "Lorem ipsum dolor sit amet",
-         "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor ",
+         "title": "Digitale Restaurant Weinkarte",
+         "text": "Ein Angebot bei HOMM Interactive an dem ich aktiv mitarbeite, ist die Umsertzung einer Digitalen Weinkarte für Restaurants. Diese basiert auf dem CRAFT CMS und ist bereits mehrfach bei unterschiedlichen Kunden im Einsatz. ",
          "image": "portfolio-mariano-entwicklung",
-         "image-alt": "portfolio-mariano-faehigkeiten",
-         "link": "faehigkeiten.html",
+         "imageAlt": "Bild von HTML code in Visual Studio Code",
+         "link": "https://www.wicato.ch",
          "linkText": "Mehr erfahren"
+      },
+      {
+         "title": "Neuentwicklung der Hotel Bänklialp Webseite",
+         "text": "Die Webseite von Hotel Bänklialp in Engelberg ist momentan die neuste Webpage, die ich bei HOMM Interactive umgesetzt habe. Durch das CRAFT CMS im Hintergrund hat der Kunde die Möglichkeit, die Webseite selber anzupassen und Änderungen vorzunehmen. Durch die implementation von einem CMS kann ich so auch wichtige Erfahrung sammeln im Back-End Bereich.",
+         "image": "portfolio-blog-baenklialp",
+         "imageAlt": "Logo Hotel Bänklialp",
+         "link": "https://www.baenklialp.ch",
+         "linkText": "Bänklialp entdecken"
+      },
+      {
+         "title": "Front-End entwicklung als Mediamatiker Ablschlussarbeit",
+         "text": "Meine Abschlussarbeit (IPA) als Mediamatiker bestand in der Entwicklung und Konzeption des Front-Ends der momentanen Webseite von Kurhaus Seeblick in Weggis. Hierbei lag der Fokus, das bereitgestellte Design so präzise wie möglich zu Entwickeln und umzusetzen. Das Projekt war ein wichtiger Meilenstein in meiner Ausbildung und hat mich auf meinen momentanen Weg geführt.",
+         "image": "portfolio-blog-seeblick",
+         "imageAlt": "Logo Kurhaus Seebliock",
+         "link": "https://www.kurhaus-seeblick.ch",
+         "linkText": "Kurhaus entdecken"
       }
    ]
 }
