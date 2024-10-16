@@ -5,7 +5,7 @@ class slider {
         this.allSlides = element.querySelectorAll('.imageSlides picture');
         this.pagination = element.querySelector('.sliderPagination');
     }
-    
+
     pauseSlide() {
         this.sliderElement.classList.toggle('pauseingImageSlider');
     }
@@ -15,7 +15,7 @@ class slider {
             this.allSlides.forEach(element => element.classList.remove('active'));
             this.currentSlide = this.allSlides.length;
             this.allSlides[this.currentSlide - 1].classList.add('active');
-        } else{
+        } else {
             this.currentSlide--
             this.allSlides.forEach(element => element.classList.remove('active'));
             this.allSlides[this.currentSlide - 1].classList.add('active');
@@ -28,14 +28,14 @@ class slider {
             this.allSlides.forEach(element => element.classList.remove('active'));
             this.currentSlide++
             this.allSlides[this.currentSlide - 1].classList.add('active');
-        } else{
+        } else {
             this.currentSlide++
             this.sliderElement.querySelector('picture.active').classList.remove('active');
             if (this.currentSlide === 5) {
                 this.currentSlide = 1;
             }
             this.allSlides[this.currentSlide - 1].classList.add('active');
-            
+
         }
         this.updatePagination();
     }
@@ -50,8 +50,8 @@ class slider {
 document.querySelectorAll('.imageSlider').forEach(element => {
     let imageSlider = new slider(element);
 
-    function autoSlide(){
-        if(!element.classList.contains('pauseingImageSlider')) {
+    function autoSlide() {
+        if (!element.classList.contains('pauseingImageSlider')) {
             imageSlider.nextSlide();
         }
     }
@@ -69,7 +69,7 @@ document.querySelectorAll('.imageSlider').forEach(element => {
         clearInterval(autoSlider);
         autoSlider = setInterval(autoSlide, 3000)
     })
-    
+
     element.querySelector('.nextSlide').addEventListener('click', () => {
         imageSlider.nextSlide();
         clearInterval(autoSlider);

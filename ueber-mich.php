@@ -2,144 +2,18 @@
 <html lang="de">
 
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Über Mich - Portfolio Mariano</title>
    <meta name="description" content="Tauchen Sie ein in die Welt von Mariano Pfister und entdecken Sie die Geschichte eines leidenschaftlichen Designers und Entwicklers. Erfahren Sie mehr über seine Fachkenntnisse, Erfahrungen und die Leidenschaft, die ihn antreibt, herausragende Webseiten zu gestalten.">
-   <meta name="author" content="Mariano Pfister">
-   <!-- Base CSS -->
-   <link rel="stylesheet" href="css/base-classes.css">
-   <link rel="stylesheet" href="css/fonts.css">
-   <link rel="stylesheet" href="css/variables.css">
-   <!-- Partial CSS -->
-   <link rel="stylesheet" href="css/text-intro.css">
-   <link rel="stylesheet" href="css/hobby.css">
-   <link rel="stylesheet" href="css/facts.css">
-   <link rel="stylesheet" href="css/cta-teaser.css">
-
-   <!-- realfavicongenerator.net -->
-   <link rel="apple-touch-icon" sizes="180x180" href="content/favicon/apple-touch-icon.png?v=1">
-   <link rel="icon" type="image/png" sizes="32x32" href="content/favicon/favicon-32x32.png?v=1">
-   <link rel="icon" type="image/png" sizes="16x16" href="content/favicon/favicon-16x16.png?v=1">
-   <link rel="manifest" href="content/favicon/site.webmanifest?v=1">
-   <link rel="mask-icon" href="content/favicon/safari-pinned-tab.svg?v=1" color="#ff7f01">
-   <link rel="shortcut icon" href="content/favicon/favicon.ico?v=1">
-   <meta name="msapplication-TileColor" content="#da532c">
-   <meta name="theme-color" content="#ffffff">
-
-   <script src="scripts/form.js" type="text/javascript" defer></script>
-
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-   <script src="scripts/animation.js" type="text/javascript" defer></script>
-
+   <?php
+      require_once('partials/head.php');
+   ?>
 </head>
 
 <body>
-   <div class="mobileFullscreenBlur"></div>
-   <nav id="navigation">
-      <div class="wrapper">
-         <a aria-label="Link zu der Startseite" href="index.html" class="navLogo">
-            <svg height="80px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 288.86 183.82">
-               <g>
-                  <path
-                     d="m194.63,183.82h-35.99l-.06-5.26v-113.04l-61.25,114.06-61.35-114.06v118.29H0V0h39.68l57.65,107.41L154.99,0h64.29c40.32,0,69.58,25.98,69.58,61.76s-29.26,61.76-69.58,61.76h-35.17V23.71h31.63c28.63,0,47.13,14.93,47.13,38.05s-18.5,38.05-47.13,38.05h-7.94v-10.51h7.94c22.59,0,36.62-10.55,36.62-27.54s-14.03-27.54-36.62-27.54h-21.12v78.79h24.66c34.23,0,59.07-21.55,59.07-51.25s-24.84-51.25-59.07-51.25h-58l-63.94,119.13L33.39,10.51H10.51v162.8h14.97V23.71l71.86,133.65L169.09,23.71v149.59h15.02v-34.65h10.51v45.16Z"
-                     style="fill:currentColor; stroke-width:0px;" />
-               </g>
-            </svg>
-         </a>
-         <menu>
-            <li class="navHome">
-               <a aria-label="Link zu der Startseite" href="index.html">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="55" height="50" viewBox="0 0 56.25 50">
-                     <path id="house-sharp-solid"
-                        d="M49.98,28.086h6.27V23.438L28.164,0,0,23.438v4.648H6.26V50H21.875V34.375h12.5V50h15.7Z"
-                        fill="currentColor" />
-                  </svg>
-               </a>
-            </li>
-            <li class="navMail">
-               <a aria-label="Jetzt ein Mail schreiben" href="mailto:max@musterman.ch"><span>max@musterman.ch</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="26.948" height="20.211" viewBox="0 0 26.948 20.211">
-                     <path id="envelope-sharp-solid"
-                        d="M0,64H26.948v4.211L13.474,77.474,0,68.211ZM0,84.211V70.253l12.521,8.611.953.653.953-.658,12.521-8.606V84.211Z"
-                        transform="translate(0 -64)" fill="currentColor" />
-                  </svg>
-               </a>
-            </li>
-            <li class="navBlog">
-               <a aria-label="Weiter zum Blog" href="blog.html"><span>Blog</span>
-               </a>
-            </li>
-         </menu>
-         <div aria-label="Show mobile navigation menu" id="mobileNavTrigger">
-            <span></span>
-         </div>
-         <menu class="navMain">
-            <li><a aria-label="Weiter zu der Unterseite Fähigkeiten" href="faehigkeiten.html">Fähigkeiten</a></li>
-            <li><a aria-label="Weiter zu der Unterseite Bewerbung" href="bewerbung.html">Bewerbung</a></li>
-            <li><a aria-label="Weiter zu der Unterseite über mich" href="ueber-mich.html" class="active">Über Mich</a></li>
-         </menu>
-      </div>
-   </nav>
-   <div class="formModal">
-      <div class="wrapper">
-         <div class="formModalTrigger formCross">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32.121" height="32.121">
-               <g data-name="Gruppe 261" fill="none" stroke="currentColor" stroke-width="3">
-                  <path data-name="Linie 62" d="m1.061 1.061 30 30" />
-                  <path data-name="Linie 63" d="m31.061 1.061-30 30" />
-               </g>
-            </svg>
-         </div>
-         <form>
-            <span>
-               <select name="anrede">
-                  <option value="">Anrede</option>
-                  <option value="herr">Herr</option>
-                  <option value="frau">Frau</option>
-                  <option value="divers">Divers</option>
-               </select>
-            </span>
-            <span>
-               <label for="firma">Firma</label>
-               <input placeholder=" " type="text" name="firma">
-            </span>
-            <span>
-               <label for="vorname">Vorname*</label>
-               <input class="required nameValidation" placeholder=" " type="text" name="vorname">
-            </span>
-            <span>
-               <label for="nachname">Nachname*</label>
-               <input class="required nameValidation" placeholder=" " type="text" name="nachname">
-            </span>
-            <span>
-               <label for="ort">Ort</label>
-               <input class="placeValidation" placeholder=" " type="text" name="ort">
-            </span>
-            <span>
-               <label for="addresse">Addresse</label>
-               <input class="adressValidation" placeholder=" " type="text" name="addresse">
-            </span>
-            <span>
-               <label for="email">E-Mail*</label>
-               <input class="required mailValidation" placeholder=" " type="text" name="email">
-            </span>
-            <span>
-               <label for="telefon">Telefon</label>
-               <input class="phoneValidation" placeholder=" " type="tel" name="telefon">
-            </span>
-            <span>
-               <label for="nachricht">Nachricht*</label>
-               <textarea class="required" placeholder=" " name="nachricht"></textarea>
-            </span>
-            <span>
-               <p class="formInfo">Felder mit * sind Pflichtfelder und müssen korrekt ausgefüllt werden.</p>
-               <button type="submit" class="button" aria-label="Formular senden">Senden</button>
-            </span>
-         </form>
-      </div>
-   </div>
+   <?php
+      require_once('partials/navigation.php');
+      require_once('partials/formular.php');
+   ?>
    <main>
       <section id="intro" class="textIntro backgroundDark">
          <div class="wrapper wrapperSmall">
@@ -152,7 +26,7 @@
                Hobbys verbindet.</p>
             <div class="introButtons">
                <a aria-label="Runterscrollen zu den Hobbys" href="#hobbys" class="button scrolldownIcon">Meine Hobbys</a>
-               <a aria-label="Weiter zu der Unterseite Fähigkeiten" href="faehigkeiten.html" class="button">Fähigkeiten</a>
+               <a aria-label="Weiter zu der Unterseite Fähigkeiten" href="faehigkeiten.php" class="button">Fähigkeiten</a>
             </div>
          </div>
       </section>
@@ -284,39 +158,9 @@
          <div></div>
       </div>
    </main>
-   <footer class="backgroundGrey">
-      <section class="backgroundGrey">
-         <div class="wrapper">
-            <a aria-label="Zu der Startseite" href="index.html" class="footerLogo backgroundGrey">
-               <svg height="100px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 288.86 183.82">
-                  <g>
-                     <path
-                        d="m194.63,183.82h-35.99l-.06-5.26v-113.04l-61.25,114.06-61.35-114.06v118.29H0V0h39.68l57.65,107.41L154.99,0h64.29c40.32,0,69.58,25.98,69.58,61.76s-29.26,61.76-69.58,61.76h-35.17V23.71h31.63c28.63,0,47.13,14.93,47.13,38.05s-18.5,38.05-47.13,38.05h-7.94v-10.51h7.94c22.59,0,36.62-10.55,36.62-27.54s-14.03-27.54-36.62-27.54h-21.12v78.79h24.66c34.23,0,59.07-21.55,59.07-51.25s-24.84-51.25-59.07-51.25h-58l-63.94,119.13L33.39,10.51H10.51v162.8h14.97V23.71l71.86,133.65L169.09,23.71v149.59h15.02v-34.65h10.51v45.16Z"
-                        style="fill:currentColor; stroke-width:0px;" />
-                  </g>
-               </svg>
-            </a>
-            <div class="footerContent">
-               <span>
-                  <h5>Interessiert?<br>
-                     Nimm jetzt mit mir Kontakt auf</h5>
-                  <p>Zögern Sie bei weiteren Fragen nicht, mich zu kontaktieren! Ich freue mich darauf, von Ihnen zu hören.
-                  </p>
-                  <p>
-                     <a aria-label="Jetzt eine Mail schreiben" href="mailto:max@musterman.ch">max@musterman.ch</a><br>
-                     <a aria-label="Jetzt per Telefon anrufen" href="tel:0761112233">076 111 22 33</a><br>
-                     <a aria-label="Jetzt per Telefon anrufen" href="tel:0411112233">041 111 22 33</a><br>
-                  </p>
-               </span>
-               <div>
-                  <a aria-label="Zu der Startseite" class="button" href="index.html">Home</a>
-                  <a aria-label="Weiter zu der Unterseite Impressum" class="button" href="impressum.html">Impressum</a>
-                  <a aria-label="Weiter zu der Datenschutz Impressum" class="button" href="datenschutz.html">Datenschutz</a>
-               </div>
-            </div>
-         </div>
-      </section>
-   </footer>
+   <?php
+      require_once('partials/footer.php');
+   ?>
 </body>
 
 </html>
