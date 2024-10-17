@@ -13,5 +13,10 @@ require_once('./authentication.php');
 <body>
     <article>
         <h1>LOGGED IN</h1>
+        <?php
+            echo '<pre>';
+            echo var_dump($_SESSION);
+            echo '</pre>';
+        ?>
     </article>
 </html>

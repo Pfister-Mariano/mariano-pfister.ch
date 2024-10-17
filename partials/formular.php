@@ -16,7 +16,7 @@
         if(empty($email)){
             $errorMessages['email'] = 'Bitte gib deine Email an';
         } else if(filter_var($email, FILTER_VALIDATE_EMAIL) == false ){
-            $errorMessages['email'] = 'Deine Email ungültig';
+            $errorMessages['email'] = 'Deine Email ist ungültig';
         } 
         
         if(empty($vorname)) {

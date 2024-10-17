@@ -8,17 +8,29 @@ session_set_cookie_params([
 session_name(SESSIONCOOKIE_NAME); 
 session_start();
 
-if (isset($_POST['username']) && isset($_POST['password'])) {
-    $isPasswordCorrect = password_verify($_POST['password'], $hashed_password); 
 
-    if ($_POST['username'] === $valid_username && $isPasswordCorrect) {
-        $_SESSION['username'] = $_POST['username'];
-        $_SESSION['logintime'] = time();
-        $_SESSION['userip'] = $_SERVER['REMOTE_ADDR'];
-        $_SESSION['useragent'] = $_SERVER['HTTP_USER_AGENT'];
-    } else {
+if (isset($_POST['username']) && isset($_POST['password'])) {
+    $query = 'SELECT * FROM `users` WHERE name = :username';
+    $statement = $db->prepare($query);
+    $values = array('username' => $_POST['username']);
+    $statement->execute( $values );
+
+    $user = $statement->fetch( PDO::FETCH_ASSOC );
+
+    if($user === false){
         $hasError = true;
-        $errorMessages[] = 'Benutzername oder Passwort stimmt nicht';
+        $errorMessages[] = 'Benutzer nicht gefunden';
+    }else{
+        $passwortCheck = password_verify($_POST['password'], $user['passwort']);
+        if($passwortCheck === false){
+            $hasError = true;
+            $errorMessages[] = 'Benutzername oder Passwort stimmt nicht';
+        } else {
+            $_SESSION['username'] = $_POST['username'];
+            $_SESSION['logintime'] = time();
+            $_SESSION['userip'] = $_SERVER['REMOTE_ADDR'];
+            $_SESSION['useragent'] = $_SERVER['HTTP_USER_AGENT'];
+        }
     }
 }
 

@@ -14,7 +14,11 @@ $isLoggedIn = false;
 $hasError = false;
 $errorMessages = array();
 
-$valid_username = 'mariano';
-$hashed_password = '$2y$10$QUGfpBr/j/CbR44EGoKkYuPJdJFJ5OjE4b7oCCbOUGYyA.zBOy0hK';
+define('DB_SERVER', 'localhost');
+define('DB_USER', 'root');
+define('DB_PASSWORD', '');
+define('DB_NAME', 'mariano_db');
+
+$db = new PDO('mysql:host='.DB_SERVER.';dbname='.DB_NAME, DB_USER, DB_PASSWORD);
 
 ?>
