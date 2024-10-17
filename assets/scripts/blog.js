@@ -11,9 +11,9 @@ async function getArticles() {
             blogWrapper.innerHTML += `
                 <article>
                   <picture class="teaserImg imgRatio-4-3">
-                     <source srcset="content/images/webp-50/${article.image}.webp" type="image/webp" media="(max-width: 600px)" >
-                     <source srcset="content/images/webp-100/${article.image}.webp" type="image/webp" media="(min-width: 601px)">
-                     <img src="content/images/original/${article.image}.jpg" alt="${article.imageAlt}">
+                     <source srcset="assets/content/images/webp-50/${article.image}.webp" type="image/webp" media="(max-width: 600px)" >
+                     <source srcset="assets/content/images/webp-100/${article.image}.webp" type="image/webp" media="(min-width: 601px)">
+                     <img src="assets/content/images/original/${article.image}.jpg" alt="${article.imageAlt}">
                   </picture>
                   <div class="teaserText">
                      <h4>${article.title}</h4>

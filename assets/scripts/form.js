@@ -19,7 +19,6 @@ document.querySelector('button[type="submit"]').addEventListener('click', functi
 });
 
 document.querySelectorAll('.formModal input').forEach(function (elem) {
-
     elem.addEventListener('blur', function (event) {
         document.querySelectorAll('.errorMessage').forEach(element => element.remove());
         let fieldError = [validateField(elem, elem.value)]
@@ -47,7 +46,10 @@ function validateForm(event) {
     }
 
     if (Object.keys(validationErrors).length === 0) {
-        console.log(data);
+        // console.log(data);
+        console.log(event.target.closest('form').submit());
+        
+        
     } else {
         displayErrors(validationErrors);
     }
@@ -111,7 +113,6 @@ function displayErrors(validationErrors) {
 
         let errorElement = document.createElement('div');
         errorElement.classList.add('errorMessage');
-        // console.log(validationErrors[error]);
         errorElement.innerText = validationErrors[error].message;
 
         if (validationErrors[error].element.parentElement.querySelector('.errorMessage') === null) {

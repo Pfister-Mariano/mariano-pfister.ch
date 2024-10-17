@@ -53,8 +53,8 @@
                   </div>
                   <div class="heroImage">
                      <picture>
-                        <source srcset="content/images/webp-100/portfolio-mariano-portrait.webp" type="image/webp">
-                        <img src="content/images/original/portfolio-mariano-portrait.png" alt="Seitliches Portrait von Mariano Pfister"
+                        <source srcset="assets/content/images/webp-100/portfolio-mariano-portrait.webp" type="image/webp">
+                        <img src="assets/content/images/original/portfolio-mariano-portrait.png" alt="Seitliches Portrait von Mariano Pfister"
                         height="900px">
                      </picture>
                   </div>
@@ -68,9 +68,9 @@
             <div class="teaserTopDownGrid">
                <article>
                   <picture class="teaserImg imgRatio-4-3">
-                     <source srcset="content/images/webp-50/portfolio-mariano-about.webp" type="image/webp" media="(max-width: 600px)" >
-                     <source srcset="content/images/webp-100/portfolio-mariano-about.webp" type="image/webp" media="(min-width: 601px)">
-                     <img src="content/images/original/portfolio-mariano-about.jpg" alt="Portrait von Mariano vor fahrenden Autos">
+                     <source srcset="assets/content/images/webp-50/portfolio-mariano-about.webp" type="image/webp" media="(max-width: 600px)" >
+                     <source srcset="assets/content/images/webp-100/portfolio-mariano-about.webp" type="image/webp" media="(min-width: 601px)">
+                     <img src="assets/content/images/original/portfolio-mariano-about.jpg" alt="Portrait von Mariano vor fahrenden Autos">
                   </picture>
                   <div class="teaserText">
                      <h3>Über Mich</h3>
@@ -81,9 +81,9 @@
                </article>
                <article>
                   <picture class="teaserImg imgRatio-4-3">
-                     <source srcset="content/images/webp-50/portfolio-mariano-faehigkeiten.webp" type="image/webp" media="(max-width: 600px)" >
-                     <source srcset="content/images/webp-100/portfolio-mariano-faehigkeiten.webp" type="image/webp" media="(min-width: 601px)">
-                     <img src="content/images/original/portfolio-mariano-faehigkeiten.jpg" alt="Bild von Laptop mit fokus auf Adobe programmen">
+                     <source srcset="assets/content/images/webp-50/portfolio-mariano-faehigkeiten.webp" type="image/webp" media="(max-width: 600px)" >
+                     <source srcset="assets/content/images/webp-100/portfolio-mariano-faehigkeiten.webp" type="image/webp" media="(min-width: 601px)">
+                     <img src="assets/content/images/original/portfolio-mariano-faehigkeiten.jpg" alt="Bild von Laptop mit fokus auf Adobe programmen">
                   </picture>
                   <div class="teaserText">
                      <h3>Meine Fähigkeiten</h3>

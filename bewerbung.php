@@ -57,9 +57,9 @@
          <div class="wrapper">
             <article>
                <picture class="ctaImg imgRatio-3-4">
-                  <source srcset="content/images/webp-50/portfolio-mariano-faehigkeiten.webp" type="image/webp" media="(max-width: 600px)" >
-                  <source srcset="content/images/webp-100/portfolio-mariano-cta-1.webp" type="image/webp" media="(min-width: 601px)">
-                  <img src="content/images/original/portfolio-mariano-cta-1.jpg" alt="Foto von Mariano an einem Holztisch">
+                  <source srcset="assets/content/images/webp-50/portfolio-mariano-faehigkeiten.webp" type="image/webp" media="(max-width: 600px)" >
+                  <source srcset="assets/content/images/webp-100/portfolio-mariano-cta-1.webp" type="image/webp" media="(min-width: 601px)">
+                  <img src="assets/content/images/original/portfolio-mariano-cta-1.jpg" alt="Foto von Mariano an einem Holztisch">
                </picture>
                <div class="ctaText">
                   <h3>Konnte ich Ihr Interesse wecke?</h3>

@@ -42,17 +42,17 @@ button {
 
 /* ESSENTIAL CLASSES */
 .backgroundDark {
-  background: #6E96A5 url(../content/images/background-noise-20.png);
+  background: #6E96A5 url(../assets/content/images/background-noise-20.png);
   color: #F1ECDC;
 }
 
 .backgroundLight {
-  background: #93BEDA url(../content/images/background-noise-20.png);
+  background: #93BEDA url(../assets/content/images/background-noise-20.png);
   color: #393939;
 }
 
 .backgroundGrey {
-  background: #647275 url(../content/images/background-noise-20.png);
+  background: #647275 url(../assets/content/images/background-noise-20.png);
   color: #F1ECDC;
 }
 

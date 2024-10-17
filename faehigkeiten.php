@@ -38,7 +38,7 @@
                <article>
                   <div class="abilityOuterStroke">
                      <div class="abilityInnerStroke imgRatio-1-1">
-                        <img src="content/images/original/logos-faehigkeiten/photoshop.png" alt="Logo von Adobe Photoshop">
+                        <img src="assets/content/images/original/logos-faehigkeiten/photoshop.png" alt="Logo von Adobe Photoshop">
                      </div>
                   </div>
                   <h6>Photoshop</h6>
@@ -46,7 +46,7 @@
                <article>
                   <div class="abilityOuterStroke">
                      <div class="abilityInnerStroke imgRatio-1-1">
-                        <img src="content/images/original/logos-faehigkeiten/indesign.png" alt="Logo von Adobe InDesign">
+                        <img src="assets/content/images/original/logos-faehigkeiten/indesign.png" alt="Logo von Adobe InDesign">
                      </div>
                   </div>
                   <h6>InDesign</h6>
@@ -54,7 +54,7 @@
                <article>
                   <div class="abilityOuterStroke">
                      <div class="abilityInnerStroke imgRatio-1-1">
-                        <img src="content/images/original/logos-faehigkeiten/html.png" alt="Logo von HTML">
+                        <img src="assets/content/images/original/logos-faehigkeiten/html.png" alt="Logo von HTML">
                      </div>
                   </div>
                   <h6>HTML</h6>
@@ -62,7 +62,7 @@
                <article>
                   <div class="abilityOuterStroke">
                      <div class="abilityInnerStroke imgRatio-1-1">
-                        <img src="content/images/original/logos-faehigkeiten/css.png" alt="Logo von CSS">
+                        <img src="assets/content/images/original/logos-faehigkeiten/css.png" alt="Logo von CSS">
                      </div>
                   </div>
                   <h6>CSS</h6>
@@ -70,7 +70,7 @@
                <article>
                   <div class="abilityOuterStroke">
                      <div class="abilityInnerStroke imgRatio-1-1">
-                        <img src="content/images/original/logos-faehigkeiten/js.png" alt="Logo von Jacascript">
+                        <img src="assets/content/images/original/logos-faehigkeiten/js.png" alt="Logo von Jacascript">
                      </div>
                   </div>
                   <h6>JS</h6>
@@ -78,7 +78,7 @@
                <article>
                   <div class="abilityOuterStroke">
                      <div class="abilityInnerStroke imgRatio-1-1">
-                        <img src="content/images/original/logos-faehigkeiten/craft.svg" alt="Logo vom CMS-System Craft">
+                        <img src="assets/content/images/original/logos-faehigkeiten/craft.svg" alt="Logo vom CMS-System Craft">
                      </div>
                   </div>
                   <h6>Craft CMS</h6>
@@ -86,7 +86,7 @@
                <article>
                   <div class="abilityOuterStroke">
                      <div class="abilityInnerStroke imgRatio-1-1">
-                        <img src="content/images/original/logos-faehigkeiten/illustrator.png" alt="Logo von Adobe Illustrator">
+                        <img src="assets/content/images/original/logos-faehigkeiten/illustrator.png" alt="Logo von Adobe Illustrator">
                      </div>
                   </div>
                   <h6>Illustrator</h6>
@@ -94,7 +94,7 @@
                <article>
                   <div class="abilityOuterStroke">
                      <div class="abilityInnerStroke imgRatio-1-1">
-                        <img src="content/images/original/logos-faehigkeiten/lightroom.png" alt="Logo von Adobe Lightroom">
+                        <img src="assets/content/images/original/logos-faehigkeiten/lightroom.png" alt="Logo von Adobe Lightroom">
                      </div>
                   </div>
                   <h6>Lightroom</h6>
@@ -102,7 +102,7 @@
                <article>
                   <div class="abilityOuterStroke">
                      <div class="abilityInnerStroke imgRatio-1-1">
-                        <img src="content/images/original/logos-faehigkeiten/twig.png" alt="Logo von der template engine twig ">
+                        <img src="assets/content/images/original/logos-faehigkeiten/twig.png" alt="Logo von der template engine twig ">
                      </div>
                   </div>
                   <h6>template engine Twig</h6>
@@ -110,7 +110,7 @@
                <article>
                   <div class="abilityOuterStroke">
                      <div class="abilityInnerStroke imgRatio-1-1">
-                        <img src="content/images/original/logos-faehigkeiten/premier-pro.png" alt="Logo von Adobe Premier Pro">
+                        <img src="assets/content/images/original/logos-faehigkeiten/premier-pro.png" alt="Logo von Adobe Premier Pro">
                      </div>
                   </div>
                   <h6>Premier Pro</h6>
@@ -137,9 +137,9 @@
                   </span>
                </div>
                <picture class="factsImg imgRatio-3-4">
-                  <source srcset="content/images/webp-50/portfolio-mariano-facts-1.webp" type="image/webp" media="(max-width: 600px)" >
-                  <source srcset="content/images/webp-100/portfolio-mariano-facts-1.webp" type="image/webp" media="(min-width: 601px)">
-                  <img src="content/images/original/portfolio-mariano-facts-1.jpg" alt="Mariano der am Laptop arbeitet">
+                  <source srcset="assets/content/images/webp-50/portfolio-mariano-facts-1.webp" type="image/webp" media="(max-width: 600px)" >
+                  <source srcset="assets/content/images/webp-100/portfolio-mariano-facts-1.webp" type="image/webp" media="(min-width: 601px)">
+                  <img src="assets/content/images/original/portfolio-mariano-facts-1.jpg" alt="Mariano der am Laptop arbeitet">
                </picture>
             </article>
          </div>
@@ -178,9 +178,9 @@
          <div class="wrapper wrapperSmall">
             <article>
                <picture class="teaserImg imgRatio-4-3">
-                  <source srcset="content/images/webp-50/portfolio-mariano-entwicklung.webp" type="image/webp" media="(max-width: 600px)" >
-                  <source srcset="content/images/webp-100/portfolio-mariano-entwicklung.webp" type="image/webp" media="(min-width: 601px)">
-                  <img src="content/images/original/portfolio-mariano-entwicklung.jpg" alt="Bild von HTML code in Visual Studio Code">
+                  <source srcset="assets/content/images/webp-50/portfolio-mariano-entwicklung.webp" type="image/webp" media="(max-width: 600px)" >
+                  <source srcset="assets/content/images/webp-100/portfolio-mariano-entwicklung.webp" type="image/webp" media="(min-width: 601px)">
+                  <img src="assets/content/images/original/portfolio-mariano-entwicklung.jpg" alt="Bild von HTML code in Visual Studio Code">
                </picture>
                <div class="teaserText">
                   <h3>Entwickelte und betreute Projekte bei HOMM Interactive</h3>

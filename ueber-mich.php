@@ -37,9 +37,9 @@
                <article>
                   <div>
                      <picture class="hobbyImg imgRatio-4-3">
-                        <source srcset="content/images/webp-50/portfolio-mariano-hobby-dnd.webp" type="image/webp" media="(max-width: 600px)" >
-                        <source srcset="content/images/webp-100/portfolio-mariano-hobby-dnd.webp" type="image/webp" media="(min-width: 601px)">
-                        <img src="content/images/original/portfolio-mariano-hobby-dnd.jpg" alt="Bild von einem Krug und einer Schriftrolle mit dem Dungeons and Dragons Logo">
+                        <source srcset="assets/content/images/webp-50/portfolio-mariano-hobby-dnd.webp" type="image/webp" media="(max-width: 600px)" >
+                        <source srcset="assets/content/images/webp-100/portfolio-mariano-hobby-dnd.webp" type="image/webp" media="(min-width: 601px)">
+                        <img src="assets/content/images/original/portfolio-mariano-hobby-dnd.jpg" alt="Bild von einem Krug und einer Schriftrolle mit dem Dungeons and Dragons Logo">
                      </picture>
                      <div class="hobbyText">
                         <h5>Geschichten-Ersteller in Dungeons and Dragons</h5>
@@ -50,9 +50,9 @@
                <article>
                   <div>
                      <picture class="hobbyImg imgRatio-4-3">
-                        <source srcset="content/images/webp-50/portfolio-mariano-hobby-ski.webp" type="image/webp" media="(max-width: 600px)" >
-                        <source srcset="content/images/webp-100/portfolio-mariano-hobby-ski.webp" type="image/webp" media="(min-width: 601px)">
-                        <img src="content/images/original/portfolio-mariano-hobby-ski.jpg" alt="Bild einer reflektierenden Ski-Brille">
+                        <source srcset="assets/content/images/webp-50/portfolio-mariano-hobby-ski.webp" type="image/webp" media="(max-width: 600px)" >
+                        <source srcset="assets/content/images/webp-100/portfolio-mariano-hobby-ski.webp" type="image/webp" media="(min-width: 601px)">
+                        <img src="assets/content/images/original/portfolio-mariano-hobby-ski.jpg" alt="Bild einer reflektierenden Ski-Brille">
                      </picture>
                      <div class="hobbyText">
                         <h5>Ski-Fahrer seit der Kindheit</h5>
@@ -63,9 +63,9 @@
                <article>
                   <div>
                      <picture class="hobbyImg imgRatio-4-3">
-                        <source srcset="content/images/webp-50/portfolio-mariano-hobby-gaming.webp" type="image/webp" media="(max-width: 600px)" >
-                        <source srcset="content/images/webp-100/portfolio-mariano-hobby-gaming.webp" type="image/webp" media="(min-width: 601px)">
-                        <img src="content/images/original/portfolio-mariano-hobby-gaming.jpg" alt="Bild einer Logitech Maus mit farbiger beläuchtung">
+                        <source srcset="assets/content/images/webp-50/portfolio-mariano-hobby-gaming.webp" type="image/webp" media="(max-width: 600px)" >
+                        <source srcset="assets/content/images/webp-100/portfolio-mariano-hobby-gaming.webp" type="image/webp" media="(min-width: 601px)">
+                        <img src="assets/content/images/original/portfolio-mariano-hobby-gaming.jpg" alt="Bild einer Logitech Maus mit farbiger beläuchtung">
                      </picture>
                      <div class="hobbyText">
                         <h5>Digitaler Entdecker und Gamer</h5>
@@ -76,9 +76,9 @@
                <article>
                   <div>
                      <picture class="hobbyImg imgRatio-4-3">
-                        <source srcset="content/images/webp-50/portfolio-mariano-hobby-warhammer.webp" type="image/webp" media="(max-width: 600px)" >
-                        <source srcset="content/images/webp-100/portfolio-mariano-hobby-warhammer.webp" type="image/webp" media="(min-width: 601px)">
-                        <img src="content/images/original/portfolio-mariano-hobby-warhammer.jpg" alt="Bild von mehreren Warhammer Modelfiguren">
+                        <source srcset="assets/content/images/webp-50/portfolio-mariano-hobby-warhammer.webp" type="image/webp" media="(max-width: 600px)" >
+                        <source srcset="assets/content/images/webp-100/portfolio-mariano-hobby-warhammer.webp" type="image/webp" media="(min-width: 601px)">
+                        <img src="assets/content/images/original/portfolio-mariano-hobby-warhammer.jpg" alt="Bild von mehreren Warhammer Modelfiguren">
                      </picture>
                      <div class="hobbyText">
                         <h5>Figuren zum Leben erwecken</h5>
@@ -89,9 +89,9 @@
                <article>
                   <div>
                      <picture class="hobbyImg imgRatio-4-3">
-                        <source srcset="content/images/webp-50/portfolio-mariano-hobby-entdecken.webp" type="image/webp" media="(max-width: 600px)" >
-                        <source srcset="content/images/webp-100/portfolio-mariano-hobby-entdecken.webp" type="image/webp" media="(min-width: 601px)">
-                        <img src="content/images/original/portfolio-mariano-hobby-entdecken.jpg" alt="Bild von einer alten Kirche in Rom">
+                        <source srcset="assets/content/images/webp-50/portfolio-mariano-hobby-entdecken.webp" type="image/webp" media="(max-width: 600px)" >
+                        <source srcset="assets/content/images/webp-100/portfolio-mariano-hobby-entdecken.webp" type="image/webp" media="(min-width: 601px)">
+                        <img src="assets/content/images/original/portfolio-mariano-hobby-entdecken.jpg" alt="Bild von einer alten Kirche in Rom">
                      </picture>
                      <div class="hobbyText">
                         <h5>Entdeckungen und gemeinsame Erfahrung</h5>
@@ -121,9 +121,9 @@
                   </span>
                </div>
                <picture class="factsImg imgRatio-3-4">
-                  <source srcset="content/images/webp-50/portfolio-mariano-facts-2.webp" type="image/webp" media="(max-width: 600px)" >
-                  <source srcset="content/images/webp-100/portfolio-mariano-facts-2.webp" type="image/webp" media="(min-width: 601px)">
-                  <img src="content/images/original/portfolio-mariano-facts-2.jpg" alt="Mariano der am Laptop arbeitet">
+                  <source srcset="assets/content/images/webp-50/portfolio-mariano-facts-2.webp" type="image/webp" media="(max-width: 600px)" >
+                  <source srcset="assets/content/images/webp-100/portfolio-mariano-facts-2.webp" type="image/webp" media="(min-width: 601px)">
+                  <img src="assets/content/images/original/portfolio-mariano-facts-2.jpg" alt="Mariano der am Laptop arbeitet">
                </picture>
             </article>
          </div>
@@ -133,9 +133,9 @@
          <div class="wrapper">
             <article>
                <picture class="ctaImg imgRatio-3-4">
-                  <source srcset="content/images/webp-50/portfolio-mariano-cta-2.webp" type="image/webp" media="(max-width: 600px)" >
-                  <source srcset="content/images/webp-100/portfolio-mariano-cta-2.webp" type="image/webp" media="(min-width: 601px)">
-                  <img src="content/images/original/portfolio-mariano-cta-2.jpg" alt="Foto von Mariano an einem Holztisch">
+                  <source srcset="assets/content/images/webp-50/portfolio-mariano-cta-2.webp" type="image/webp" media="(max-width: 600px)" >
+                  <source srcset="assets/content/images/webp-100/portfolio-mariano-cta-2.webp" type="image/webp" media="(min-width: 601px)">
+                  <img src="assets/content/images/original/portfolio-mariano-cta-2.jpg" alt="Foto von Mariano an einem Holztisch">
                </picture>
                <div class="ctaText">
                   <h3>Konnte ich Ihr Interesse wecke?</h3>

@@ -30,8 +30,8 @@
                   </div>
                   <div class="heroImage">
                      <picture>
-                        <source srcset="content/images/webp-100/portfolio-mariano-portrait.webp" type="image/webp">
-                        <img src="content/images/original/portfolio-mariano-portrait.png"
+                        <source srcset="assets/content/images/webp-100/portfolio-mariano-portrait.webp" type="image/webp">
+                        <img src="assets/content/images/original/portfolio-mariano-portrait.png"
                            alt="Seitliches Portrait von Mariano Pfister" height="900px">
                      </picture>
                   </div>
@@ -77,21 +77,21 @@
 
                   <div class="imageSlides imgRatio-4-3">
                      <picture title="1" class="active">
-                        <source srcset="content/images/webp-50/portfolio-mariano-about.webp" type="image/webp"
+                        <source srcset="assets/content/images/webp-50/portfolio-mariano-about.webp" type="image/webp"
                            media="(max-width: 600px)">
-                        <source srcset="content/images/webp-100/portfolio-mariano-about.webp" type="image/webp"
+                        <source srcset="assets/content/images/webp-100/portfolio-mariano-about.webp" type="image/webp"
                            media="(min-width: 601px)">
-                        <img src="content/images/original/portfolio-mariano-about.jpg"
+                        <img src="assets/content/images/original/portfolio-mariano-about.jpg"
                            alt="Portrait von Mariano vor fahrenden Autos">
                      </picture>
                      <picture title="2" class="">
-                        <img src="content/images/original/portfolio-mariano-cta-1.jpg">
+                        <img src="assets/content/images/original/portfolio-mariano-cta-1.jpg">
                      </picture>
                      <picture title="3" class="">
-                        <img src="content/images/original/portfolio-mariano-cta-2.jpg">
+                        <img src="assets/content/images/original/portfolio-mariano-cta-2.jpg">
                      </picture>
                      <picture title="4" class="">
-                        <img src="content/images/original/portfolio-mariano-facts-1.jpg">
+                        <img src="assets/content/images/original/portfolio-mariano-facts-1.jpg">
                      </picture>
                   </div>
 
@@ -115,11 +115,11 @@
                </div>
                <div class="teaserImage">
                   <picture class="imgRatio-4-3">
-                     <source srcset="content/images/webp-50/portfolio-mariano-faehigkeiten.webp" type="image/webp"
+                     <source srcset="assets/content/images/webp-50/portfolio-mariano-faehigkeiten.webp" type="image/webp"
                         media="(max-width: 600px)">
-                     <source srcset="content/images/webp-100/portfolio-mariano-faehigkeiten.webp" type="image/webp"
+                     <source srcset="assets/content/images/webp-100/portfolio-mariano-faehigkeiten.webp" type="image/webp"
                         media="(min-width: 601px)">
-                     <img src="content/images/original/portfolio-mariano-faehigkeiten.jpg"
+                     <img src="assets/content/images/original/portfolio-mariano-faehigkeiten.jpg"
                         alt="Bild von Laptop mit fokus auf Adobe programmen">
                   </picture>
                </div>
@@ -133,7 +133,7 @@
                <article>
                   <div class="abilityOuterStroke">
                      <div class="abilityInnerStroke imgRatio-1-1">
-                        <img src="content/images/original/logos-faehigkeiten/photoshop.png"
+                        <img src="assets/content/images/original/logos-faehigkeiten/photoshop.png"
                            alt="Logo von Adobe Photoshop">
                      </div>
                   </div>
@@ -142,7 +142,7 @@
                <article>
                   <div class="abilityOuterStroke">
                      <div class="abilityInnerStroke imgRatio-1-1">
-                        <img src="content/images/original/logos-faehigkeiten/indesign.png"
+                        <img src="assets/content/images/original/logos-faehigkeiten/indesign.png"
                            alt="Logo von Adobe InDesign">
                      </div>
                   </div>
@@ -151,7 +151,7 @@
                <article>
                   <div class="abilityOuterStroke">
                      <div class="abilityInnerStroke imgRatio-1-1">
-                        <img src="content/images/original/logos-faehigkeiten/html.png" alt="Logo von HTML">
+                        <img src="assets/content/images/original/logos-faehigkeiten/html.png" alt="Logo von HTML">
                      </div>
                   </div>
                   <h6>HTML</h6>
@@ -159,7 +159,7 @@
                <article>
                   <div class="abilityOuterStroke">
                      <div class="abilityInnerStroke imgRatio-1-1">
-                        <img src="content/images/original/logos-faehigkeiten/css.png" alt="Logo von CSS">
+                        <img src="assets/content/images/original/logos-faehigkeiten/css.png" alt="Logo von CSS">
                      </div>
                   </div>
                   <h6>CSS</h6>
@@ -167,7 +167,7 @@
                <article>
                   <div class="abilityOuterStroke">
                      <div class="abilityInnerStroke imgRatio-1-1">
-                        <img src="content/images/original/logos-faehigkeiten/js.png" alt="Logo von Jacascript">
+                        <img src="assets/content/images/original/logos-faehigkeiten/js.png" alt="Logo von Jacascript">
                      </div>
                   </div>
                   <h6>JS</h6>
@@ -175,7 +175,7 @@
                <article>
                   <div class="abilityOuterStroke">
                      <div class="abilityInnerStroke imgRatio-1-1">
-                        <img src="content/images/original/logos-faehigkeiten/craft.svg" alt="Logo vom CMS-System Craft">
+                        <img src="assets/content/images/original/logos-faehigkeiten/craft.svg" alt="Logo vom CMS-System Craft">
                      </div>
                   </div>
                   <h6>Craft CMS</h6>
@@ -189,11 +189,11 @@
          <div class="wrapper">
             <article>
                <picture class="ctaImg imgRatio-3-4">
-                  <source srcset="content/images/webp-50/portfolio-mariano-cta-1.webp" type="image/webp"
+                  <source srcset="assets/content/images/webp-50/portfolio-mariano-cta-1.webp" type="image/webp"
                      media="(max-width: 600px)">
-                  <source srcset="content/images/webp-100/portfolio-mariano-cta-1.webp" type="image/webp"
+                  <source srcset="assets/content/images/webp-100/portfolio-mariano-cta-1.webp" type="image/webp"
                      media="(min-width: 601px)">
-                  <img src="content/images/original/portfolio-mariano-cta-1.jpg"
+                  <img src="assets/content/images/original/portfolio-mariano-cta-1.jpg"
                      alt="Foto von Mariano an einem Holztisch">
                </picture>
                <div class="ctaText">

@@ -44,17 +44,17 @@ button {
 /* ESSENTIAL CLASSES */
 
 .backgroundDark {
-   background: v.$bgColorDark url(../content/images/background-noise-20.png);
+   background: v.$bgColorDark url(../assets/content/images/background-noise-20.png);
    color: v.$textColorLight;
 }
 
 .backgroundLight {
-   background: v.$bgColorLight url(../content/images/background-noise-20.png);
+   background: v.$bgColorLight url(../assets/content/images/background-noise-20.png);
    color: v.$textColorDark;
 }
 
 .backgroundGrey {
-   background: v.$bgColorGrey url(../content/images/background-noise-20.png);
+   background: v.$bgColorGrey url(../assets/content/images/background-noise-20.png);
    color: v.$textColorLight;
 }
 

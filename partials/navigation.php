@@ -1,4 +1,4 @@
-<div class="mobileFullscreenBlur"></div>
+<!-- <div class="mobileFullscreenBlur"></div> -->
 <nav id="navigation">
     <div class="wrapper">
         <a aria-label="Link zu der Startseite" href="index.php" class="navLogo">
@@ -30,7 +30,8 @@
             </a>
         </li>
         <li class="navBlog">
-            <a aria-label="Weiter zum Blog" href="blog.php"><span>Blog</span>
+            <a aria-label="Weiter zum Blog" href="blog.php">
+                <span>Blog</span>
             </a>
         </li>
         </menu>
